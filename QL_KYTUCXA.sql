@@ -683,19 +683,20 @@ WHERE
 CREATE VIEW VIEW_HOTRO AS
 SELECT 
     ID_HOTRO,
-    ID_PHONG,
-    NOIDUNG,
-    NGAYGUI,
-    TRANGTHAI,
+    HOTRO.ID_PHONG,
+	PHONG.MAPHONG,
+    HOTRO.NOIDUNG,
+    HOTRO.NGAYGUI,
+    HOTRO.TRANGTHAI,
     CASE 
-        WHEN TRANGTHAI = 0 THEN 'Chưa xử lý'
+        WHEN HOTRO.TRANGTHAI = 0 THEN 'Chưa xử lý'
         ELSE 'Đã xử lý'
     END AS TINHTRANG_XULY
-FROM 
-    HOTRO
+FROM HOTRO
+JOIN PHONG ON PHONG.ID_PHONG = HOTRO.ID_PHONG
 WHERE 
-    DAXOA = 0;  -- Chỉ lấy yêu cầu hỗ trợ chưa bị xóa
-
+    HOTRO.DAXOA = 0;  -- Chỉ lấy yêu cầu hỗ trợ chưa bị xóa
+	
 -- 3.BANG VIEW DON GIA
 CREATE VIEW VIEW_DONGIA AS
 SELECT 

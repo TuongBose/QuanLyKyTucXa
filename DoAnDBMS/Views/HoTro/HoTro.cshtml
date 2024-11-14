@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_HOTRO>
+
+@{
+    ViewBag.Title = "HoTro";
+    Layout = "~/Views/Share/_LayoutPage1.cshtml";
+}
+
+<h2>HoTro</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã phòng
+        </th>
+        <th>
+            Nội dung
+        </th>
+        <th>
+            Ngày gửi nội dung hỗ trợ
+        </th>
+        <th>
+            Trạng thái
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.MAPHONG
+        </td>
+        <td>
+            @item.NOIDUNG
+        </td>
+        <td>
+            @DateTime.Parse(item.NGAYGUI.ToString()).ToShortDateString()
+        </td>
+        @if (item.TRANGTHAI == true)
+        {
+            <td>
+                Đã xử lý
+            </td>
+        }
+        else
+                {
+                    <td>
+                        Chưa xử lý
+                    </td>
+                }
+    </tr>
+}
+
+</table>
