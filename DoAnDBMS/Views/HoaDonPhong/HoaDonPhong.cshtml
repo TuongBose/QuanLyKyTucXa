@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_HOADONPHONG>
+
+@{
+    ViewBag.Title = "HoaDonPhong";
+    Layout = "~/Views/Share/_LayoutPage1.cshtml";
+}
+
+<h2>HoaDonPhong</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã dãy phòng
+        </th>
+        <th>
+            Mã Phòng
+        </th>
+        <th>
+            Năm
+        </th>
+        <th>
+           Kỳ
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Thành Tiền
+        </th>
+        <th>
+            Trang thái
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MADAYPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DONGIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THANHTIEN)
+        </td>
+        @if(item.TRANGTHAI==true)
+                {
+<td>Đã thu tiền</td>
+        }
+        else
+                {
+                    <td>Chưa thu tiền</td>
+                }
+    </tr>
+}
+
+</table>

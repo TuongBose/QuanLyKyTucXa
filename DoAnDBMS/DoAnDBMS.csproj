@@ -111,7 +111,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DonGiaController.cs" />
+    <Compile Include="Controllers\HoaDonPhongController.cs" />
     <Compile Include="Controllers\HoTroController.cs" />
+    <Compile Include="Controllers\NguoiDungCanBoController.cs" />
+    <Compile Include="Controllers\NguoiDungNhanVienController.cs" />
+    <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -154,6 +158,8 @@
     <Content Include="Views\TrangChu\TrangChu.cshtml" />
     <Content Include="Views\DonGia\DonGia.cshtml" />
     <Content Include="Views\HoTro\HoTro.cshtml" />
+    <Content Include="Views\NhanVien\NhanVien.cshtml" />
+    <Content Include="Views\HoaDonPhong\HoaDonPhong.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -163,6 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\NguoiDungCanBo\" />
+    <Folder Include="Views\NguoiDungNhanVien\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

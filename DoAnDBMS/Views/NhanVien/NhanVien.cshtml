@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_NHANVIEN>
+
+@{
+    ViewBag.Title = "NhanVien";
+    Layout = "~/Views/Share/_LayoutPage1.cshtml";
+}
+
+<h2>NhanVien</h2>
+
+<table class="table">
+    <tr>
+        <th>Mã nhân viên</th>
+        <th>Tên nhân viên</th>
+        <th>Giới tính</th>
+        <th>CMND_CCCD</th>
+        <th>Địa chỉ</th>
+        <th>Email</th>
+        <th>Số điện thoại</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MANV</td>
+                    <td>@item.TENNV</td>
+                        @if (item.GIOITINH == true)
+                        {
+                            <td>Nam</td>
+                        }
+                        else
+                {
+                    <td>Nữ</td>
+                }
+                    <td>@item.CMND_CCCD</td>
+                    <td>@item.DIACHI</td>
+                    <td>@item.EMAIL</td>
+                    <td>@item.SDT</td>
+                </tr>
+            }
+</table>
