@@ -18,9 +18,45 @@ namespace DoAnDBMS.Controllers
         }
 
         [HttpPost]
-        public ActionResult DangNhap()
+        public ActionResult DangNhap(FormCollection Data)
         {
-            return View();
+            var id = Data["ID"];
+            var pass = Data["Pass"];
+
+            bool hasError = false;
+
+            if (String.IsNullOrEmpty(id))
+            {
+                ViewData["LoiID"] = "ID Cán bộ không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(pass))
+            {
+                ViewData["LoiPass"] = "Mật khẩu không được bỏ trống";
+                hasError = true;
+            }
+
+            if (hasError)
+                return View();
+            else
+            {
+                Models.CANBO hasAccount = db.CANBOs.FirstOrDefault(x => x.ID_CANBO == int.Parse(id) && x.MATKHAU == pass);
+                if (hasAccount != null)
+                {
+                    Session["Account"] = hasAccount;
+                    return RedirectToAction("TrangChuCanBo", "TrangChu");
+                }
+                else
+                    ViewBag.TB = "Sai ID hoặc sai mật khẩu, vui lòng nhập lại";
+
+                return View();
+            }
+        }
+
+        public ActionResult DangXuat()
+        {
+            Session["Account"] = null;
+            return RedirectToAction("DangNhap", "NguoiDungCanBo");
         }
     }
 }

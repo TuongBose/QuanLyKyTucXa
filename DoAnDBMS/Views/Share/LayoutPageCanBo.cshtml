@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+@{
+    DoAnDBMS.Models.CANBO CB = Session["Account"] as DoAnDBMS.Models.CANBO;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar chính -->
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <a class="navbar-brand" href="@Url.Action("TrangChuCanBo","TrangChu")">HỆ THỐNG QUẢN LÝ KÝ TÚC XÁ</a>
+        <div class="col-8">
+            <ul class="navbar-nav">
+                <!-- Đăng nhập -->
+                <li class="nav-item ms-auto">
+                    @if (CB != null)
+                    {
+                        <div class="text-white">Cán Bộ: @CB.TENCB</div>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DangXuat","NguoiDungCanBo")">Đăng Xuất</a>
+                    }
+                    else
+                    {
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DangNhap","NguoiDungCanBo")">
+                            Đăng Nhập
+                        </a>
+                    }
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Thanh điều hướng ngang (Sidenav) bên dưới Navbar chính nếu đăng nhập thành công-->
+    @if (CB != null)
+    {
+        <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+            <div class="container">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary mx-2" href="#">Hóa đơn điện nước</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoaDonPhong", "HoaDonPhong")">Hóa đơn phòng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary mx-2" href="#">Dãy phòng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("NhanVien", "NhanVien")">Nhân viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DonGia", "DonGia")">Đơn giá</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoTro", "HoTro")">Hỗ trợ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    }
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+}
+
+<h2>DangNhap</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    {
+        <div>
+            @Html.TextBox("ID", "", new
+       {
+           @class = "form-control",
+           @placeholder = "Nhập ID Cán Bộ"
+       }) @ViewData["LoiID"]
+</div>
+<div>
+    @Html.TextBox("Pass", "", new
+{
+   @class = "form-control",
+   @placeholder = "Nhập mật khẩu"
+}) @ViewData["LoiPass"]
+</div>
+}
+    <div>@ViewBag.TB</div>
+<button type="submit">Đăng Nhập</button>
+}
+
+<a href="@Url.Action("DangNhap","NguoiDungNhanVien")">Nhân Viên</a>

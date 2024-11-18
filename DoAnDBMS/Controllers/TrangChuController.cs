@@ -9,7 +9,12 @@ namespace DoAnDBMS.Controllers
     public class TrangChuController : Controller
     {
         // GET: TrangChu
-        public ActionResult TrangChu()
+        public ActionResult TrangChuNhanVien()
+        {
+            return View();
+        }
+
+        public ActionResult TrangChuCanBo()
         {
             return View();
         }

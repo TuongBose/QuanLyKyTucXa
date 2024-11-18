@@ -154,12 +154,16 @@
       <DependentUpon>QLKTX.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <Content Include="Views\Share\_LayoutPage1.cshtml" />
-    <Content Include="Views\TrangChu\TrangChu.cshtml" />
+    <Content Include="Views\Share\LayoutPageNhanVien.cshtml" />
     <Content Include="Views\DonGia\DonGia.cshtml" />
     <Content Include="Views\HoTro\HoTro.cshtml" />
     <Content Include="Views\NhanVien\NhanVien.cshtml" />
     <Content Include="Views\HoaDonPhong\HoaDonPhong.cshtml" />
+    <Content Include="Views\TrangChu\TrangChuNhanVien.cshtml" />
+    <Content Include="Views\Share\LayoutPageCanBo.cshtml" />
+    <Content Include="Views\TrangChu\TrangChuCanBo.cshtml" />
+    <Content Include="Views\NguoiDungNhanVien\DangNhap.cshtml" />
+    <Content Include="Views\NguoiDungCanBo\DangNhap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -169,8 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\NguoiDungCanBo\" />
-    <Folder Include="Views\NguoiDungNhanVien\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
