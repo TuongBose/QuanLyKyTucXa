@@ -142,3 +142,5 @@ D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csproj.CoreCom
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csproj.Up2Date
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.dll
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.pdb
+C:\Users\VanAnh\Desktop\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csprojResolveAssemblyReference.cache
+C:\Users\VanAnh\Desktop\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.dll

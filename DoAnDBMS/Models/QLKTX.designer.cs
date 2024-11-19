@@ -63,13 +63,7 @@ namespace DoAnDBMS.Models
     partial void InsertSINHVIEN(SINHVIEN instance);
     partial void UpdateSINHVIEN(SINHVIEN instance);
     partial void DeleteSINHVIEN(SINHVIEN instance);
-		#endregion
-
-		public QLKTXDataContext() :
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QL_KYTUCXAConnectionString"].ConnectionString)
-		{
-			OnCreated();
-		}
+    #endregion
 		
 		public QLKTXDataContext(string connection) : 
 				base(connection, mappingSource)
