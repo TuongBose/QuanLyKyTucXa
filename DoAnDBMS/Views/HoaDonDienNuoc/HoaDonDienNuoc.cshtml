@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_HOADONDIENNUOC>
+
+@{
+    ViewBag.Title = "Hóa Đơn Điện Nước";
+    Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
+}
+
+<h2 class="text-center my-4">Hóa Đơn Điện Nước</h2>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Mã Hóa Đơn</th>
+            <th scope="col">Mã Phòng</th>
+            <th scope="col">Tháng</th>
+            <th scope="col">Năm</th>
+            <th scope="col">Tiền Điện</th>
+            <th scope="col">Tiền Nước</th>
+            <th scope="col">Tổng Tiền</th>
+            <th scope="col">Trạng Thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ID_HDDN)</td>
+                <td>@Html.DisplayFor(modelItem => item.ID_PHONG)</td>
+                <td>@Html.DisplayFor(modelItem => item.THANG)</td>
+                <td>@Html.DisplayFor(modelItem => item.NAM)</td>
+                <td>@Html.DisplayFor(modelItem => item.TIENDIEN)</td>
+                <td>@Html.DisplayFor(modelItem => item.TIENNUOC)</td>
+                <td>@Html.DisplayFor(modelItem => item.TONGTIEN)</td>
+                <td>
+                    @if (item.TRANGTHAI)
+                    {
+                        <span class="badge badge-success">Đã thu tiền</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-warning">Chưa thu tiền</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
