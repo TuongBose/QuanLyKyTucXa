@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "CanBoNV";
-    Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
+    Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
 }
 
 <h2>Danh sách nhân viên</h2>
@@ -18,22 +18,22 @@
         <th>Số điện thoại</th>
     </tr>
     @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.MANV</td>
-            <td>@item.TENNV</td>
-            @if (item.GIOITINH == true)
-            {
-                <td>Nam</td>
-            }
-            else
-            {
-                <td>Nữ</td>
-            }
-            <td>@item.CMND_CCCD</td>
-            <td>@item.DIACHI</td>
-            <td>@item.EMAIL</td>
-            <td>@item.SDT</td>
-        </tr>
-    }
+        {
+            <tr>
+                <td>@item.MANV</td>
+                <td>@item.TENNV</td>
+                @if (item.GIOITINH == true)
+                {
+                    <td>Nam</td>
+                }
+                else
+                {
+                    <td>Nữ</td>
+                }
+                <td>@item.CMND_CCCD</td>
+                <td>@item.DIACHI</td>
+                <td>@item.EMAIL</td>
+                <td>@item.SDT</td>
+            </tr>
+        }
 </table>
