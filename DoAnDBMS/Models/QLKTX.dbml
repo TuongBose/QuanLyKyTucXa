@@ -127,28 +127,6 @@
       <Column Name="DAXOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PHONG" Member="PHONGs">
-    <Type Name="PHONG">
-      <Column Name="ID_PHONG" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_DAY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MAPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
-      <Column Name="TAIKHOAN" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
-      <Column Name="SOLUONGSV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DONGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TINHTRANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MOTAKHAC" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
-      <Column Name="DAXOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="PHONG_CONGTODIEN" Member="CONGTODIENs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="CONGTODIEN" />
-      <Association Name="PHONG_CONGTONUOC" Member="CONGTONUOCs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="CONGTONUOC" />
-      <Association Name="PHONG_HOADON_DIENNUOC" Member="HOADON_DIENNUOCs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="HOADON_DIENNUOC" />
-      <Association Name="PHONG_HOADON_PHONG" Member="HOADON_PHONGs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="HOADON_PHONG" />
-      <Association Name="PHONG_HOTRO" Member="HOTROs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="HOTRO" />
-      <Association Name="PHONG_SINHVIEN" Member="SINHVIENs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="SINHVIEN" />
-      <Association Name="DAYPHONG_PHONG" Member="DAYPHONG" ThisKey="ID_DAY" OtherKey="ID_DAY" Type="DAYPHONG" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SINHVIEN" Member="SINHVIENs">
     <Type Name="SINHVIEN">
       <Column Name="MASV" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -211,21 +189,6 @@
       <Column Name="MADAYPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.VIEW_Phong" Member="VIEW_Phongs">
-    <Type Name="VIEW_Phong">
-      <Column Name="ID_PHONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_DAY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MAPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
-      <Column Name="TAIKHOAN" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
-      <Column Name="SOLUONGSV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DONGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TINHTRANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MOTAKHAC" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
-      <Column Name="DayPhong" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.VIEW_CANBO" Member="VIEW_CANBOs">
     <Type Name="VIEW_CANBO">
       <Column Name="ID_CANBO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -256,6 +219,43 @@
       <Column Name="NGAYGUI" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="TINHTRANG_XULY" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONG" Member="PHONGs">
+    <Type Name="PHONG">
+      <Column Name="ID_PHONG" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_DAY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TAIKHOAN" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="SOLUONGSV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TINHTRANG" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MOTAKHAC" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="DAXOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PHONG_CONGTODIEN" Member="CONGTODIENs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="CONGTODIEN" />
+      <Association Name="PHONG_CONGTONUOC" Member="CONGTONUOCs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="CONGTONUOC" />
+      <Association Name="PHONG_HOADON_DIENNUOC" Member="HOADON_DIENNUOCs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="HOADON_DIENNUOC" />
+      <Association Name="PHONG_HOADON_PHONG" Member="HOADON_PHONGs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="HOADON_PHONG" />
+      <Association Name="PHONG_HOTRO" Member="HOTROs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="HOTRO" />
+      <Association Name="PHONG_SINHVIEN" Member="SINHVIENs" ThisKey="ID_PHONG" OtherKey="ID_PHONG" Type="SINHVIEN" />
+      <Association Name="DAYPHONG_PHONG" Member="DAYPHONG" ThisKey="ID_DAY" OtherKey="ID_DAY" Type="DAYPHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_Phong" Member="VIEW_Phongs">
+    <Type Name="VIEW_Phong">
+      <Column Name="ID_PHONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DAY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TAIKHOAN" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="SOLUONGSV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TINHTRANG" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MOTAKHAC" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="DayPhong" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

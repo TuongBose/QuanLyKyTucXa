@@ -226,16 +226,16 @@ VALUES
 --Nhập liệu bàng Phong
 INSERT INTO PHONG (ID_PHONG, ID_DAY, MAPHONG, TAIKHOAN, MATKHAU, SOLUONGSV, DONGIA, TINHTRANG, TRANGTHAI, MOTAKHAC, DAXOA)
 VALUES 
-(101, 1, 'P101', 'user1', 'P@ssw0rd1', 4, 5000000, 1, 0, N'Phòng 4 người', 0),
-(102, 1, 'P102', 'user2', 'W3lc0m3!', 2, 3000000, 1, 0, N'Phòng 2 người', 0),
-(201, 2, 'P201', 'user3', 'S3cur3P@ss', 6, 7000000, 1, 0, N'Phòng 6 người', 0),
-(202, 2, 'P202', 'user4', 'H@ppyD@y', 3, 4500000, 1, 0, N'Phòng 3 người', 0),
-(301, 3, 'P301', 'user5', 'R00mS@fe', 4, 5000000, 1, 0, N'Phòng 4 người', 0),
-(302, 3, 'P302', 'user6', 'G00dL1fe', 2, 3000000, 1, 0, N'Phòng 2 người', 0),
-(401, 4, 'P401', 'user7', 'MyR00m99', 5, 6000000, 1, 0, N'Phòng 5 người', 0),
-(402, 4, 'P402', 'user8', 'L1v1ngW3ll', 3, 4500000, 1, 0, N'Phòng 3 người', 0),
-(501, 5, 'P501', 'user9', 'S@f3St@y', 4, 5000000, 1, 0, N'Phòng 4 người', 0),
-(502, 5, 'P502', 'user10', 'C0mf0rtZ0n3', 2, 3000000, 1, 0, N'Phòng 2 người', 0);
+(101, 1, 'P101', 'user1', 'P@ssw0rd1', 4, 5000000, N'Đủ thiết bị', 0, N'Phòng 4 người', 0),
+(102, 1, 'P102', 'user2', 'W3lc0m3!', 2, 3000000, N'Phòng chưa được sơn lại', 0, N'Phòng 2 người', 0),
+(201, 2, 'P201', 'user3', 'S3cur3P@ss', 6, 7000000, N'Phòng thiếu ánh sáng', 0, N'Phòng 6 người', 0),
+(202, 2, 'P202', 'user4', 'H@ppyD@y', 3, 4500000, N'Phòng còn tốt', 0, N'Phòng 3 người', 0),
+(301, 3, 'P301', 'user5', 'R00mS@fe', 4, 5000000, N'Đủ vật dụng', 0, N'Phòng 4 người', 0),
+(302, 3, 'P302', 'user6', 'G00dL1fe', 2, 3000000, N'Thiếu nhiều', 0, N'Phòng 2 người', 0),
+(401, 4, 'P401', 'user7', 'MyR00m99', 5, 6000000, N'Phòng còn tốt', 0, N'Phòng 5 người', 0),
+(402, 4, 'P402', 'user8', 'L1v1ngW3ll', 3, 4500000, N'Phòng bị hư 1 bóng đèn', 0, N'Phòng 3 người', 0),
+(501, 5, 'P501', 'user9', 'S@f3St@y', 4, 5000000, N'Nước bị yếu', 0, N'Phòng 4 người', 0),
+(502, 5, 'P502', 'user10', 'C0mf0rtZ0n3', 2, 3000000, N'2 phòng ngủ', 0, N'Phòng 2 người', 0);
 
 --Nhập liệu bảng đơn giá
 INSERT INTO DONGIA (ID_DONGIA, MADONGIA, DONGIADIEN, DONGIANUOC, NGAYAPDUNG, DAXOA)

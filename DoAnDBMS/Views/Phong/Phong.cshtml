@@ -16,6 +16,7 @@
         <th>Đơn giá</th>
         <th>Mô tả khác</th>
         <th>Tình trạng</th>
+        <th>Trạng thái</th>
     </tr>
 @foreach(var item in Model)
             {
@@ -26,6 +27,7 @@
         <td>@item.SOLUONGSV</td>
         <td>@item.DONGIA</td>
         <td>@item.MOTAKHAC</td>
+        <td>@item.TINHTRANG</td>
         @if(item.TRANGTHAI == true)
                 {
                     <td>Có người ở</td>
