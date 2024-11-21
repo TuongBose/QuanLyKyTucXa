@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DoAnDBMS</RootNamespace>
     <AssemblyName>DoAnDBMS</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -54,9 +54,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -112,12 +112,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CanBoNVController.cs" />
+    <Compile Include="Controllers\DayPhongController.cs" />
     <Compile Include="Controllers\DonGiaController.cs" />
+    <Compile Include="Controllers\HoaDonDienNuocController.cs" />
     <Compile Include="Controllers\HoaDonPhongController.cs" />
     <Compile Include="Controllers\HoTroController.cs" />
     <Compile Include="Controllers\NguoiDungCanBoController.cs" />
     <Compile Include="Controllers\NguoiDungNhanVienController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
+    <Compile Include="Controllers\PhongController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +170,9 @@
     <Content Include="Views\NguoiDungNhanVien\DangNhap.cshtml" />
     <Content Include="Views\NguoiDungCanBo\DangNhap.cshtml" />
     <Content Include="Views\CanBoNV\CanBoNV.cshtml" />
+    <Content Include="Views\HoaDonDienNuoc\HoaDonDienNuoc.cshtml" />
+    <Content Include="Views\DayPhong\DayPhong.cshtml" />
+    <Content Include="Views\Phong\Phong.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DoAnDBMS.Models.VIEW_HOADONDIENNUOC>
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_HoaDonDienNuoc>
 
 @{
     ViewBag.Title = "Hóa Đơn Điện Nước";
@@ -7,41 +7,53 @@
 
 <h2 class="text-center my-4">Hóa Đơn Điện Nước</h2>
 
-<table class="table table-bordered table-hover table-striped">
-    <thead class="thead-dark">
+<table class="table">
+    <tr>
+        <th>Mã dãy phòng</th>
+        <th>Mã Phòng</th>
+        <th>Điện tháng trước</th>
+        <th>Điện tháng này</th>
+        <th>Chỉ số điện</th>
+        <th>Nước tháng trước</th>
+        <th>Nước tháng này</th>
+        <th>Chỉ số nước</th>
+        <th>Tiền điện</th>
+        <th>Tiền nước</th>
+        <th>Thành tiền</th>
+        <th>Tháng lập</th>
+        <th>Năm lập</th>
+        <th>Trạng thái hóa đơn</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        var ChiSoDien = item.ChiSoCuoiDien - item.ChiSoDauDien;
+        var ChiSoNuoc = item.ChiSoCuoiNuoc - item.ChiSoDauNuoc;
+        var TienDien = ChiSoDien * item.DonGiaDien;
+        var TienNuoc = ChiSoNuoc * item.DonGiaNuoc;
+        var ThanhTien = TienDien + TienNuoc;
         <tr>
-            <th scope="col">Mã Hóa Đơn</th>
-            <th scope="col">Mã Phòng</th>
-            <th scope="col">Tháng</th>
-            <th scope="col">Năm</th>
-            <th scope="col">Tiền Điện</th>
-            <th scope="col">Tiền Nước</th>
-            <th scope="col">Tổng Tiền</th>
-            <th scope="col">Trạng Thái</th>
+            <td>@Html.DisplayFor(modelItem => item.DayPhong)</td>
+            <td>@Html.DisplayFor(modelItem => item.MaPhong)</td>
+            <td>@Html.DisplayFor(modelItem => item.ChiSoDauDien)</td>
+            <td>@Html.DisplayFor(modelItem => item.ChiSoCuoiDien)</td>
+            <td>@ChiSoDien</td>
+            <td>@Html.DisplayFor(modelItem => item.ChiSoDauNuoc)</td>
+            <td>@Html.DisplayFor(modelItem => item.ChiSoCuoiNuoc)</td>
+            <td>@ChiSoNuoc</td>
+            <td>@TienDien</td>
+            <td>@TienNuoc</td>
+            <td>@ThanhTien</td>
+            <td>@item.THANG</td>
+            <td>@item.NAM</td>
+            @if (item.TRANGTHAI == true)
+            {
+                <td>Đã thu tiền</td>
+            }
+            else
+            {
+                <td>Chưa thu tiền</td>
+            }
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.ID_HDDN)</td>
-                <td>@Html.DisplayFor(modelItem => item.ID_PHONG)</td>
-                <td>@Html.DisplayFor(modelItem => item.THANG)</td>
-                <td>@Html.DisplayFor(modelItem => item.NAM)</td>
-                <td>@Html.DisplayFor(modelItem => item.TIENDIEN)</td>
-                <td>@Html.DisplayFor(modelItem => item.TIENNUOC)</td>
-                <td>@Html.DisplayFor(modelItem => item.TONGTIEN)</td>
-                <td>
-                    @if (item.TRANGTHAI)
-                    {
-                        <span class="badge badge-success">Đã thu tiền</span>
-                    }
-                    else
-                    {
-                        <span class="badge badge-warning">Chưa thu tiền</span>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
+    }
 </table>

@@ -13,7 +13,7 @@ namespace DoAnDBMS.Controllers
 
         public ActionResult HoaDonDienNuoc()
         {
-            return View(db.VIEW_HOADONDIENNUOCs);
+            return View(db.VIEW_HoaDonDienNuocs);
         }
     }
 }

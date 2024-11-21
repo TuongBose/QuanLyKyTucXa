@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_DayPhong>
+
+@{
+    ViewBag.Title = "DayPhong";
+    Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
+}
+
+<h2>DayPhong</h2>
+
+<table class="table">
+    <tr>
+        <th>Mã dãy phòng</th>
+    </tr>
+
+@foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MADAYPHONG</td>
+                </tr>
+            }
+</table>

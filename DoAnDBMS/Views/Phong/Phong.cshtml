@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_Phong>
+
+@{
+    ViewBag.Title = "Phong";
+    Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
+}
+
+<h2>Phong</h2>
+
+<table class="table">
+    <tr>
+        <th>Dãy phòng</th>
+        <th>Mã Phòng</th>
+        <th>Tài khoản</th>
+        <th>Số lượng</th>
+        <th>Đơn giá</th>
+        <th>Mô tả khác</th>
+        <th>Tình trạng</th>
+    </tr>
+@foreach(var item in Model)
+            {
+    <tr>
+        <td>@item.DayPhong</td>
+        <td>@item.MAPHONG</td>
+        <td>@item.TAIKHOAN</td>
+        <td>@item.SOLUONGSV</td>
+        <td>@item.DONGIA</td>
+        <td>@item.MOTAKHAC</td>
+        @if(item.TRANGTHAI == true)
+                {
+                    <td>Có người ở</td>
+        }
+        else
+                {
+                    <td>Không có người ở</td>
+                }
+    </tr>
+            }
+</table>
