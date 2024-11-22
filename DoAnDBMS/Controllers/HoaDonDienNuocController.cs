@@ -8,12 +8,20 @@ namespace DoAnDBMS.Controllers
 {
     public class HoaDonDienNuocController : Controller
     {
-        // GET: HoaDonDienNuoc
         Models.QLKTXDataContext db = new Models.QLKTXDataContext();
 
         public ActionResult HoaDonDienNuoc()
         {
-            return View(db.VIEW_HoaDonDienNuocs);
+            DoAnDBMS.Models.CANBO CB = Session["Account"] as DoAnDBMS.Models.CANBO;
+
+            if (CB != null)
+            {
+                return View("HoaDonDienNuocCanBo", db.VIEW_HoaDonDienNuocs);
+            }
+            else
+            {
+                return View("HoaDonDienNuocNhanVien", db.VIEW_HoaDonDienNuocs);
+            }
         }
     }
 }
