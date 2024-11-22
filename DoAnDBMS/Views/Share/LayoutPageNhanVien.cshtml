@@ -21,11 +21,11 @@
                     @if (NV != null)
                     {
                         <div class="text-white">Nhân Viên: @NV.TENNV</div>
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DangXuat","NguoiDungNhanVien")">Đăng Xuất</a>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DangXuat","NhanVien")">Đăng Xuất</a>
                     }
                     else
                     {
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DangNhap","NguoiDungNhanVien")">
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DangNhap","NhanVien")">
                             Đăng Nhập
                         </a>
                     }
@@ -42,25 +42,25 @@
             <div class="container">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoaDonDienNuoc", "HoaDonDienNuoc")">Hóa đơn điện nước</a>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoaDonDienNuoc", "NhanVien")">Hóa đơn điện nước</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoaDonPhong", "HoaDonPhong")">Hóa đơn phòng</a>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoaDonPhong", "NhanVien")">Hóa đơn phòng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DayPhong", "DayPhong")">Dãy phòng</a>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DayPhong", "NhanVien")">Dãy phòng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("Phong", "Phong")">Phòng</a>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("Phong", "NhanVien")">Phòng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("NhanVien", "NhanVien")">Nhân viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DonGia", "DonGia")">Đơn giá</a>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("DonGia", "NhanVien")">Đơn giá</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoTro", "HoTro")">Hỗ trợ</a>
+                        <a class="nav-link btn btn-outline-primary mx-2" href="@Url.Action("HoTro", "NhanVien")">Hỗ trợ</a>
                     </li>
                 </ul>
             </div>

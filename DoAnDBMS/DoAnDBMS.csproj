@@ -111,16 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CanBoNVController.cs" />
-    <Compile Include="Controllers\DayPhongController.cs" />
-    <Compile Include="Controllers\DonGiaController.cs" />
-    <Compile Include="Controllers\HoaDonDienNuocController.cs" />
-    <Compile Include="Controllers\HoaDonPhongController.cs" />
-    <Compile Include="Controllers\HoTroController.cs" />
-    <Compile Include="Controllers\NguoiDungCanBoController.cs" />
-    <Compile Include="Controllers\NguoiDungNhanVienController.cs" />
+    <Compile Include="Controllers\CanBoController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
-    <Compile Include="Controllers\PhongController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -160,19 +152,26 @@
     </None>
     <None Include="packages.config" />
     <Content Include="Views\Share\LayoutPageNhanVien.cshtml" />
-    <Content Include="Views\DonGia\DonGia.cshtml" />
-    <Content Include="Views\HoTro\HoTro.cshtml" />
     <Content Include="Views\NhanVien\NhanVien.cshtml" />
-    <Content Include="Views\HoaDonPhong\HoaDonPhong.cshtml" />
     <Content Include="Views\TrangChu\TrangChuNhanVien.cshtml" />
     <Content Include="Views\Share\LayoutPageCanBo.cshtml" />
     <Content Include="Views\TrangChu\TrangChuCanBo.cshtml" />
-    <Content Include="Views\NguoiDungNhanVien\DangNhap.cshtml" />
-    <Content Include="Views\NguoiDungCanBo\DangNhap.cshtml" />
-    <Content Include="Views\CanBoNV\CanBoNV.cshtml" />
-    <Content Include="Views\HoaDonDienNuoc\HoaDonDienNuoc.cshtml" />
-    <Content Include="Views\DayPhong\DayPhong.cshtml" />
-    <Content Include="Views\Phong\Phong.cshtml" />
+    <Content Include="Views\NhanVien\HoaDonDienNuoc.cshtml" />
+    <Content Include="Views\NhanVien\HoaDonPhong.cshtml" />
+    <Content Include="Views\NhanVien\DayPhong.cshtml" />
+    <Content Include="Views\NhanVien\Phong.cshtml" />
+    <Content Include="Views\NhanVien\DonGia.cshtml" />
+    <Content Include="Views\NhanVien\HoTro.cshtml" />
+    <Content Include="Views\NhanVien\DangNhap.cshtml" />
+    <Content Include="Views\CanBo\CanBo.cshtml" />
+    <Content Include="Views\CanBo\NhanVien.cshtml" />
+    <Content Include="Views\CanBo\DayPhong.cshtml" />
+    <Content Include="Views\CanBo\Phong.cshtml" />
+    <Content Include="Views\CanBo\DonGia.cshtml" />
+    <Content Include="Views\CanBo\HoTro.cshtml" />
+    <Content Include="Views\CanBo\HoaDonDienNuoc.cshtml" />
+    <Content Include="Views\CanBo\HoaDonPhong.cshtml" />
+    <Content Include="Views\CanBo\DangNhap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

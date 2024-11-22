@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_CANBO>
+
+@{
+    ViewBag.Title = "CanBo";
+    Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+}
+
+<h2>CanBo</h2>
+
+<table class="table">
+    <tr>
+        <th>Mã cán bộ</th>
+        <th>Tài khoản</th>
+        <th>Họ và tên</th>
+        <th>Điện thoại</th>
+        <th>Email</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MACB</td>
+                    <td>@item.TAIKHOAN</td>
+                    <td>@item.TENCB</td>
+                    <td>@item.SDT</td>
+                    <td>@item.EMAIL</td>
+                </tr>
+            }
+</table>

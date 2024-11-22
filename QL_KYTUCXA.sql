@@ -155,7 +155,7 @@ CREATE TABLE CANBO
 	CMND_CCCD INT,
 	DIACHI NVARCHAR(40),
 	EMAIL VARCHAR(40),
-	SDT INT,
+	SDT NVARCHAR(15),
 	QUANTRI BIT CONSTRAINT DF_QUANTRI_CANBO DEFAULT 0,
 	DAXOA BIT CONSTRAINT DF_DAXOA_CANBO DEFAULT 0,
 
@@ -177,7 +177,7 @@ CREATE TABLE NHANVIEN
 	CMND_CCCD INT,
 	DIACHI NVARCHAR(40),
 	EMAIL VARCHAR(40),
-	SDT INT,
+	SDT NVARCHAR(15),
 	DAXOA BIT CONSTRAINT DF_DAXOA_NHANVIEN DEFAULT 0,
 
 	CONSTRAINT PK_NHANVIEN PRIMARY KEY (ID_NHANVIEN),
@@ -194,7 +194,7 @@ CREATE TABLE SINHVIEN
 	GIOITINH BIT,
 	CMND_CCCD INT,
 	EMAIL VARCHAR(40),
-	SDT INT,
+	SDT NVARCHAR(15),
 	NGAYLAMHOPDONG DATETIME,
 	DAXOA BIT CONSTRAINT DF_DAXOA_SINHVIEN DEFAULT 0,
 
@@ -209,7 +209,7 @@ CREATE TABLE THANNHAN
 (
 	MASV CHAR(5) NOT NULL,
 	TENTN NVARCHAR(40),
-	SDT INT,
+	SDT NVARCHAR(15),
 	QUANHE NVARCHAR(30),
 	CONSTRAINT FK_THANNHAN_SINHVIEN FOREIGN KEY (MASV) REFERENCES SINHVIEN(MASV)
 )
@@ -325,34 +325,34 @@ VALUES
 --Nhập dữ liệu bảng CanBo
 INSERT INTO CANBO (ID_CANBO, MACB, TAIKHOAN, MATKHAU, TENCB, GIOITINH, CMND_CCCD, DIACHI, EMAIL, SDT, QUANTRI, DAXOA)
 VALUES 
-(0241, 'CB01', 'adm1', 'Admin@123', N'Nguyễn Văn Dũng', 1, 151234, 'TP HCM', 'admin1@example.com', 098765432, 1, 0),
-(0242, 'CB02', 'adm2', 'Admin@456', N'Trần Thị Nga', 0, 987654, 'TP HCM', 'admin2@example.com', 012345678, 0, 0),
-(0243, 'CB03', 'adm3', 'Admin@789', N'Lê Văn An', 1, 125853, 'TP HCM', 'admin3@example.com', 087654321, 0, 0),
-(0244, 'CB04', 'adm4', 'Admin@321', N'Nguyễn Thị Mai', 0, 987432, 'TP HCM', 'admin4@example.com', 076542109, 0, 0),
-(0245, 'CB05', 'adm5', 'Admin@654', N'Phạm Văn Tùng', 1, 124584, 'TP HCM', 'admin5@example.com', 064321098, 0, 0);
+(0241, 'CB01', 'adm1', 'Admin@123', N'Nguyễn Văn Dũng', 1, 151234, 'TP HCM', 'admin1@example.com', '098765432', 1, 0),
+(0242, 'CB02', 'adm2', 'Admin@456', N'Trần Thị Nga', 0, 987654, 'TP HCM', 'admin2@example.com', '012345678', 0, 0),
+(0243, 'CB03', 'adm3', 'Admin@789', N'Lê Văn An', 1, 125853, 'TP HCM', 'admin3@example.com', '087654321', 0, 0),
+(0244, 'CB04', 'adm4', 'Admin@321', N'Nguyễn Thị Mai', 0, 987432, 'TP HCM', 'admin4@example.com', '076542109', 0, 0),
+(0245, 'CB05', 'adm5', 'Admin@654', N'Phạm Văn Tùng', 1, 124584, 'TP HCM', 'admin5@example.com', '064321098', 0, 0);
 
 --Nhập dữ liệu mẫu bảng NhanVien
 INSERT INTO NHANVIEN (ID_NHANVIEN, MANV, TAIKHOAN, MATKHAU, TENNV, GIOITINH, CMND_CCCD, DIACHI, EMAIL, SDT, DAXOA)
 VALUES 
-(31, 'NV01', 'st1', 'Staff@123', N'Nguyễn Văn Bình', 1, 05468, 'TPHCM', 'staff1@example.com', 01234567, 0),
-(32, 'NV02', 'st2', 'Staff@456', N'Trần Thị Hoa', 0, 06521, 'TPHCM', 'staff2@example.com', 07654321, 0),
-(33, 'NV03', 'st3', 'Staff@789', N'Nguyễn Thị Ngân', 0, 05689, 'TPHCM', 'staff3@example.com', 08765432, 0),
-(34, 'NV04', 'st4', 'Staff@321', N'Nguyễn Văn Đại', 1, 05487, 'TPHCM', 'staff4@example.com', 09876543, 0),
-(35, 'NV05', 'st5', 'Staff@654', N'Trần Công Minh', 1, 01654, 'TPHCM', 'staff5@example.com', 01234560, 0);
+(31, 'NV01', 'st1', 'Staff@123', N'Nguyễn Văn Bình', 1, 05468, 'TPHCM', 'staff1@example.com', '01234567', 0),
+(32, 'NV02', 'st2', 'Staff@456', N'Trần Thị Hoa', 0, 06521, 'TPHCM', 'staff2@example.com', '07654321', 0),
+(33, 'NV03', 'st3', 'Staff@789', N'Nguyễn Thị Ngân', 0, 05689, 'TPHCM', 'staff3@example.com', '08765432', 0),
+(34, 'NV04', 'st4', 'Staff@321', N'Nguyễn Văn Đại', 1, 05487, 'TPHCM', 'staff4@example.com', '09876543', 0),
+(35, 'NV05', 'st5', 'Staff@654', N'Trần Công Minh', 1, 01654, 'TPHCM', 'staff5@example.com', '01234560', 0);
 
 --Nhập dữ liệu mẫu bảng Sinh Vien
 INSERT INTO SINHVIEN (MASV, ID_PHONG, TENSV, GIOITINH, CMND_CCCD, EMAIL, SDT, NGAYLAMHOPDONG, DAXOA)
 VALUES 
-('S001', 101, N'Nguyễn Văn An', 1, 123456789, 'an@example.com', 0987654321, '2024-09-01', 0),
-('S002', 102, N'Trần Thị Bình', 0, 987654321, 'binh@example.com', 0912345678, '2024-09-02', 0),
-('S003', 201, N'Lê Văn Cường', 1, 234567890, 'cuong@example.com', 0923456789, '2024-09-03', 0),
-('S004', 202, N'Nguyễn Thị Duyên', 0, 345678901, 'duyen@example.com', 0934567890, '2024-09-04', 0),
-('S005', 301, N'Phạm Văn Đức', 1, 456789012, 'duc@example.com', 0945678901, '2024-09-05', 0),
-('S006', 302, N'Nguyễn Văn Phát', 1, 567890123, 'fa@example.com', 0956789012, '2024-09-06', 0),
-('S007', 401, N'Trần Thị Giang', 0, 678901234, 'giang@example.com', 0967890123, '2024-09-07', 0),
-('S008', 302, N'Lê Văn Hòa', 1, 789012345, 'hoa@example.com', 0978901234, '2024-09-08', 0),
-('S009', 501, N'Nguyễn Thị Hương', 0, 890123456, 'huong@example.com', 0989012345, '2024-09-09', 0),
-('S010', 402, N'Phạm Văn Huy', 1, 901234567, 'huy@example.com', 0990123456, '2024-09-10', 0);
+('S001', 101, N'Nguyễn Văn An', 1, 123456789, 'an@example.com', '0987654321', '2024-09-01', 0),
+('S002', 102, N'Trần Thị Bình', 0, 987654321, 'binh@example.com', '0912345678', '2024-09-02', 0),
+('S003', 201, N'Lê Văn Cường', 1, 234567890, 'cuong@example.com', '0923456789', '2024-09-03', 0),
+('S004', 202, N'Nguyễn Thị Duyên', 0, 345678901, 'duyen@example.com', '0934567890', '2024-09-04', 0),
+('S005', 301, N'Phạm Văn Đức', 1, 456789012, 'duc@example.com', '0945678901', '2024-09-05', 0),
+('S006', 302, N'Nguyễn Văn Phát', 1, 567890123, 'fa@example.com', '0956789012', '2024-09-06', 0),
+('S007', 401, N'Trần Thị Giang', 0, 678901234, 'giang@example.com', '0967890123', '2024-09-07', 0),
+('S008', 302, N'Lê Văn Hòa', 1, 789012345, 'hoa@example.com', '0978901234', '2024-09-08', 0),
+('S009', 501, N'Nguyễn Thị Hương', 0, 890123456, 'huong@example.com', '0989012345', '2024-09-09', 0),
+('S010', 402, N'Phạm Văn Huy', 1, 901234567, 'huy@example.com', '0990123456', '2024-09-10', 0);
 
 --Nhập dữ liệu mẫu bảng ThanNhan
 INSERT INTO THANNHAN (MASV, TENTN, SDT, QUANHE)
