@@ -7,7 +7,7 @@ GO
 
 CREATE TABLE DAYPHONG
 (
-	ID_DAY INT NOT NULL,
+	ID_DAY INT NOT NULL IDENTITY(1, 1),
 	MADAYPHONG CHAR(5) NOT NULL,
 	DAXOA BIT CONSTRAINT DF_DAXOA_DAYPHONG DEFAULT 0,
 
@@ -18,7 +18,7 @@ CREATE TABLE DAYPHONG
 
 CREATE TABLE PHONG
 (
-	ID_PHONG INT NOT NULL,
+	ID_PHONG INT NOT NULL IDENTITY(1, 1),
 	ID_DAY INT NOT NULL,
 	MAPHONG CHAR(5) NOT NULL,
 	TAIKHOAN NVARCHAR(10) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE PHONG
 
 CREATE TABLE DONGIA
 (
-	ID_DONGIA INT NOT NULL,
+	ID_DONGIA INT NOT NULL IDENTITY(1, 1),
 	MADONGIA CHAR(5) NOT NULL,
 	DONGIADIEN INT,
 	DONGIANUOC INT,
@@ -55,7 +55,7 @@ CREATE TABLE DONGIA
 
 CREATE TABLE CONGTODIEN
 (
-	ID_DIEN INT NOT NULL,
+	ID_DIEN INT NOT NULL IDENTITY(1, 1),
 	ID_PHONG INT NOT NULL,
 	CHISODAU INT,
 	CHISOCUOI INT,
@@ -73,7 +73,7 @@ CREATE TABLE CONGTODIEN
 
 CREATE TABLE CONGTONUOC
 (
-	ID_NUOC INT NOT NULL,
+	ID_NUOC INT NOT NULL IDENTITY(1, 1),
 	ID_PHONG INT NOT NULL,
 	CHISODAU INT,
 	CHISOCUOI INT,
@@ -91,7 +91,7 @@ CREATE TABLE CONGTONUOC
 
 CREATE TABLE HOADON_DIENNUOC
 (
-	ID_HDDN INT NOT NULL,
+	ID_HDDN INT NOT NULL IDENTITY(1, 1),
 	ID_PHONG INT NOT NULL,
 	ID_DONGIA INT NOT NULL,
 	ID_DIEN INT NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE HOADON_DIENNUOC
 
 CREATE TABLE HOADON_PHONG
 (
-	ID_HDP INT NOT NULL,
+	ID_HDP INT NOT NULL IDENTITY(1, 1),
 	ID_PHONG INT NOT NULL,
 	ID_DONGIA INT NOT NULL,
 	NAM INT,
@@ -130,7 +130,7 @@ CREATE TABLE HOADON_PHONG
 
 CREATE TABLE HOTRO
 (
-	ID_HOTRO INT NOT NULL,
+	ID_HOTRO INT NOT NULL IDENTITY(1, 1),
 	ID_PHONG INT NOT NULL,
 	NOIDUNG NVARCHAR(40),
 	NGAYGUI DATETIME,
@@ -146,7 +146,7 @@ CREATE TABLE HOTRO
 
 CREATE TABLE CANBO
 (
-	ID_CANBO INT NOT NULL,
+	ID_CANBO INT NOT NULL IDENTITY(1, 1),
 	MACB CHAR(5) NOT NULL,
 	TAIKHOAN CHAR(5) NOT NULL,
 	MATKHAU NVARCHAR(40),
@@ -168,7 +168,7 @@ CREATE TABLE CANBO
 
 CREATE TABLE NHANVIEN
 (
-	ID_NHANVIEN INT NOT NULL,
+	ID_NHANVIEN INT NOT NULL IDENTITY(1, 1),
 	MANV CHAR(5) NOT NULL,
 	TAIKHOAN CHAR(5) NOT NULL,
 	MATKHAU NVARCHAR(40),
@@ -215,144 +215,144 @@ CREATE TABLE THANNHAN
 )
 
 --Nhập dữ liệu mẫu bảng DAYPHONG
-INSERT INTO DAYPHONG (ID_DAY, MADAYPHONG, DAXOA)
+INSERT INTO DAYPHONG (MADAYPHONG, DAXOA)
 VALUES 
-(1, 'DAY01', 0),
-(2, 'DAY02', 0),
-(3, 'DAY03', 0),
-(4, 'DAY04', 0),
-(5, 'DAY05', 0);
+('DAY01', 0),
+('DAY02', 0),
+('DAY03', 0),
+('DAY04', 0),
+('DAY05', 0);
 
 --Nhập liệu bàng Phong
-INSERT INTO PHONG (ID_PHONG, ID_DAY, MAPHONG, TAIKHOAN, MATKHAU, SOLUONGSV, DONGIA, TINHTRANG, TRANGTHAI, MOTAKHAC, DAXOA)
+INSERT INTO PHONG (ID_DAY, MAPHONG, TAIKHOAN, MATKHAU, SOLUONGSV, DONGIA, TINHTRANG, TRANGTHAI, MOTAKHAC, DAXOA)
 VALUES 
-(101, 1, 'P101', 'user1', 'P@ssw0rd1', 4, 5000000, N'Đủ thiết bị', 0, N'Phòng 4 người', 0),
-(102, 1, 'P102', 'user2', 'W3lc0m3!', 2, 3000000, N'Phòng chưa được sơn lại', 0, N'Phòng 2 người', 0),
-(201, 2, 'P201', 'user3', 'S3cur3P@ss', 6, 7000000, N'Phòng thiếu ánh sáng', 0, N'Phòng 6 người', 0),
-(202, 2, 'P202', 'user4', 'H@ppyD@y', 3, 4500000, N'Phòng còn tốt', 0, N'Phòng 3 người', 0),
-(301, 3, 'P301', 'user5', 'R00mS@fe', 4, 5000000, N'Đủ vật dụng', 0, N'Phòng 4 người', 0),
-(302, 3, 'P302', 'user6', 'G00dL1fe', 2, 3000000, N'Thiếu nhiều', 0, N'Phòng 2 người', 0),
-(401, 4, 'P401', 'user7', 'MyR00m99', 5, 6000000, N'Phòng còn tốt', 0, N'Phòng 5 người', 0),
-(402, 4, 'P402', 'user8', 'L1v1ngW3ll', 3, 4500000, N'Phòng bị hư 1 bóng đèn', 0, N'Phòng 3 người', 0),
-(501, 5, 'P501', 'user9', 'S@f3St@y', 4, 5000000, N'Nước bị yếu', 0, N'Phòng 4 người', 0),
-(502, 5, 'P502', 'user10', 'C0mf0rtZ0n3', 2, 3000000, N'2 phòng ngủ', 0, N'Phòng 2 người', 0);
+(1, 'P101', 'user1', 'P@ssw0rd1', 4, 5000000, N'Đủ thiết bị', 0, N'Phòng 4 người', 0),
+(1, 'P102', 'user2', 'W3lc0m3!', 2, 3000000, N'Phòng chưa được sơn lại', 0, N'Phòng 2 người', 0),
+(2, 'P201', 'user3', 'S3cur3P@ss', 6, 7000000, N'Phòng thiếu ánh sáng', 0, N'Phòng 6 người', 0),
+(2, 'P202', 'user4', 'H@ppyD@y', 3, 4500000, N'Phòng còn tốt', 0, N'Phòng 3 người', 0),
+(3, 'P301', 'user5', 'R00mS@fe', 4, 5000000, N'Đủ vật dụng', 0, N'Phòng 4 người', 0),
+(3, 'P302', 'user6', 'G00dL1fe', 2, 3000000, N'Thiếu nhiều', 0, N'Phòng 2 người', 0),
+(4, 'P401', 'user7', 'MyR00m99', 5, 6000000, N'Phòng còn tốt', 0, N'Phòng 5 người', 0),
+(4, 'P402', 'user8', 'L1v1ngW3ll', 3, 4500000, N'Phòng bị hư 1 bóng đèn', 0, N'Phòng 3 người', 0),
+(5, 'P501', 'user9', 'S@f3St@y', 4, 5000000, N'Nước bị yếu', 0, N'Phòng 4 người', 0),
+(5, 'P502', 'user10', 'C0mf0rtZ0n3', 2, 3000000, N'2 phòng ngủ', 0, N'Phòng 2 người', 0);
 
 --Nhập liệu bảng đơn giá
-INSERT INTO DONGIA (ID_DONGIA, MADONGIA, DONGIADIEN, DONGIANUOC, NGAYAPDUNG, DAXOA)
+INSERT INTO DONGIA (MADONGIA, DONGIADIEN, DONGIANUOC, NGAYAPDUNG, DAXOA)
 VALUES 
-(01, 'DG01', 2500, 3500, '2020-01-01', 0),
-(02, 'DG02', 2600, 3600, '2021-04-01', 0),
-(03, 'DG03', 2700, 3700, '2022-06-01', 0),
-(04, 'DG04', 2800, 3800, '2023-08-01', 0),
-(05, 'DG05', 2900, 3900, '2024-010-01', 0);
+('DG01', 2500, 3500, '2020-01-01', 0),
+('DG02', 2600, 3600, '2021-04-01', 0),
+('DG03', 2700, 3700, '2022-06-01', 0),
+('DG04', 2800, 3800, '2023-08-01', 0),
+('DG05', 2900, 3900, '2024-010-01', 0);
 
 --Nhập liệu bảng CONGTODIEN 
-INSERT INTO CONGTODIEN (ID_DIEN, ID_PHONG, CHISODAU, CHISOCUOI, THANG, NAM, TRANGTHAI)
+INSERT INTO CONGTODIEN (ID_PHONG, CHISODAU, CHISOCUOI, THANG, NAM, TRANGTHAI)
 VALUES 
-(0101, 101, 0, 150, 10, 2024, 0),
-(0102, 102, 0, 120, 10, 2024, 0),
-(0201, 201, 0, 250, 10, 2024, 0),
-(0202, 202, 0, 200, 10, 2024, 0),
-(0301, 301, 0, 230, 10, 2024, 0),
-(0302, 302, 0, 100, 10, 2024, 0),
-(0401, 401, 0, 270, 10, 2024, 0),
-(0402, 402, 0, 210, 10, 2024, 0),
-(0501, 501, 0, 160, 10, 2024, 0),
-(0502, 502, 0, 130, 10, 2024, 0);
+(1, 0, 150, 10, 2024, 0),
+(2, 0, 120, 10, 2024, 0),
+(3, 0, 250, 10, 2024, 0),
+(4, 0, 200, 10, 2024, 0),
+(5, 0, 230, 10, 2024, 0),
+(6, 0, 100, 10, 2024, 0),
+(7, 0, 270, 10, 2024, 0),
+(8, 0, 210, 10, 2024, 0),
+(9, 0, 160, 10, 2024, 0),
+(10, 0, 130, 10, 2024, 0);
 
 --Nhập liệu bảng công tơ nước
-INSERT INTO CONGTONUOC (ID_NUOC, ID_PHONG, CHISODAU, CHISOCUOI, THANG, NAM, TRANGTHAI)
+INSERT INTO CONGTONUOC (ID_PHONG, CHISODAU, CHISOCUOI, THANG, NAM, TRANGTHAI)
 VALUES 
-(011, 101, 700, 800, 10, 2024, 0),
-(012, 102, 500, 700, 10, 2024, 0),
-(021, 201, 1200, 1300, 10, 2024, 0),
-(022, 202, 900, 1100, 10, 2024, 0),
-(031, 301, 800, 900, 10, 2024, 0),
-(032, 302, 300, 400, 10, 2024, 0),
-(041, 401, 1300, 1400, 10, 2024, 0),
-(042, 402, 600, 700, 10, 2024, 0),
-(051, 501, 900, 1000, 10, 2024, 0),
-(052, 502, 200, 300, 10, 2024, 0);
+(1, 700, 800, 10, 2024, 0),
+(2, 500, 700, 10, 2024, 0),
+(3, 1200, 1300, 10, 2024, 0),
+(4, 900, 1100, 10, 2024, 0),
+(5, 800, 900, 10, 2024, 0),
+(6, 300, 400, 10, 2024, 0),
+(7, 1300, 1400, 10, 2024, 0),
+(8, 600, 700, 10, 2024, 0),
+(9, 900, 1000, 10, 2024, 0),
+(10, 200, 300, 10, 2024, 0);
 
 --Nhập liệu bảng HOADON_DIENNUOC
 -- Nhập liệu mẫu bảng HOADON_DIENNUOC
-INSERT INTO HOADON_DIENNUOC (ID_HDDN, ID_PHONG, ID_DONGIA, ID_DIEN, ID_NUOC, THANG, NAM, TRANGTHAI)
+INSERT INTO HOADON_DIENNUOC (ID_PHONG, ID_DONGIA, ID_DIEN, ID_NUOC, THANG, NAM, TRANGTHAI)
 VALUES 
-(0001, 101, 05, 0101, 011, 10, 2024, 0),
-(0002, 102, 05, 0102, 012, 10, 2024, 0),
-(0003, 201, 05, 0201, 021, 10, 2024, 0),
-(0004, 202, 05, 0202, 022, 10, 2024, 0),
-(0005, 301, 05, 0301, 031, 10, 2024, 0),
-(0006, 302, 05, 0302, 032, 10, 2024, 0),
-(0007, 401, 05, 0401, 041, 10, 2024, 0),
-(0008, 402, 05, 0402, 042, 10, 2024, 0),
-(0009, 501, 05, 0501, 051, 10, 2024, 0),
-(0010, 502, 05, 0502, 052, 10, 2024, 0);
+(1, 1, 1, 1, 10, 2024, 0),
+(2, 2, 2, 2, 10, 2024, 0),
+(3, 3, 3, 3, 10, 2024, 0),
+(4, 4, 4, 4, 10, 2024, 0),
+(5, 5, 5, 5, 10, 2024, 0),
+(6, 1, 6, 6, 10, 2024, 0),
+(7, 2, 7, 7, 10, 2024, 0),
+(8, 3, 8, 8, 10, 2024, 0),
+(9, 4, 9, 9, 10, 2024, 0),
+(10, 5, 10, 10, 10, 2024, 0);
 
 --Nhập liệu mẫu bảng HOADON_PHONG
-INSERT INTO HOADON_PHONG (ID_HDP, ID_PHONG, ID_DONGIA, NAM, KY, THANHTIEN, TRANGTHAI, DAXOA)
+INSERT INTO HOADON_PHONG (ID_PHONG, ID_DONGIA, NAM, KY, THANHTIEN, TRANGTHAI, DAXOA)
 VALUES 
-(00001, 101, 05, 2024, 10, 2500000, 0, 0),  
-(00002, 102, 05, 2024, 10, 1500000, 0, 0), 
-(00003, 201, 05, 2024, 10, 2800000, 0, 0),  
-(00004, 202, 05, 2024, 10, 2000000, 0, 0),  
-(00005, 301, 05, 2024, 10, 2200000, 0, 0),  
-(00006, 302, 05, 2024, 10, 1800000, 0, 0),  
-(00007, 401, 05, 2024, 10, 2500000, 0, 0),  
-(00008, 402, 05, 2024, 10, 2700000, 0, 0),  
-(00009, 501, 05, 2024, 10, 2300000, 0, 0),  
-(00010, 502, 05, 2024, 10, 1900000, 0, 0);  
+(1, 1, 2024, 10, 2500000, 0, 0),  
+(2, 2, 2024, 10, 1500000, 0, 0), 
+(3, 3, 2024, 10, 2800000, 0, 0),  
+(4, 4, 2024, 10, 2000000, 0, 0),  
+(5, 5, 2024, 10, 2200000, 0, 0),  
+(6, 1, 2024, 10, 1800000, 0, 0),  
+(7, 2, 2024, 10, 2500000, 0, 0),  
+(8, 3, 2024, 10, 2700000, 0, 0),  
+(9, 4, 2024, 10, 2300000, 0, 0),  
+(10, 5, 2024, 10, 1900000, 0, 0);  
 
 --Nhập dữ liệu bảng Hỗ trợ
-INSERT INTO HOTRO (ID_HOTRO, ID_PHONG, NOIDUNG, NGAYGUI, TRANGTHAI, DAXOA)
+INSERT INTO HOTRO (ID_PHONG, NOIDUNG, NGAYGUI, TRANGTHAI, DAXOA)
 VALUES 
-(1001, 101, N'Cần sửa điện', '2024-10-01', 0, 0),
-(1002, 102, N'Nước rò rỉ', '2024-10-02', 0, 0),
-(1003, 201, N'Yêu cầu vệ sinh phòng', '2024-10-03', 0, 0),
-(1004, 202, N'Cần thay bóng đèn', '2024-10-04', 0, 0),
-(1005, 301, N'Báo hỏng điều hòa', '2024-10-05', 0, 0),
-(1006, 302, N'Phòng có mùi hôi', '2024-10-06', 0, 0),
-(1007, 401, N'Cần thay khóa cửa', '2024-10-07', 0, 0),
-(1008, 402, N'Sửa vòi nước', '2024-10-08', 0, 0),
-(1009, 501, N'Yêu cầu lắp thêm bóng đèn', '2024-10-09', 0, 0),
-(1100, 502, N'Cần dọn dẹp phòng', '2024-10-10', 0, 0),
-(1101, 101, N'Yêu cầu kiểm tra an toàn điện', '2024-10-11', 0, 0),
-(1102, 102, N'Nước nóng không hoạt động', '2024-10-12', 0, 0),
-(1103, 201, N'Phòng cần bảo trì điều hòa', '2024-10-13', 0, 0),
-(1104, 202, N'Kiểm tra mạng internet', '2024-10-14', 0, 0),
-(1105, 301, N'Cần bổ sung đồ dùng sinh hoạt', '2024-10-15', 0, 0);
+(1, N'Cần sửa điện', '2024-10-01', 0, 0),
+(2, N'Nước rò rỉ', '2024-10-02', 0, 0),
+(3, N'Yêu cầu vệ sinh phòng', '2024-10-03', 0, 0),
+(4, N'Cần thay bóng đèn', '2024-10-04', 0, 0),
+(5, N'Báo hỏng điều hòa', '2024-10-05', 0, 0),
+(6, N'Phòng có mùi hôi', '2024-10-06', 0, 0),
+(7, N'Cần thay khóa cửa', '2024-10-07', 0, 0),
+(8, N'Sửa vòi nước', '2024-10-08', 0, 0),
+(9, N'Yêu cầu lắp thêm bóng đèn', '2024-10-09', 0, 0),
+(10, N'Cần dọn dẹp phòng', '2024-10-10', 0, 0),
+(1, N'Yêu cầu kiểm tra an toàn điện', '2024-10-11', 0, 0),
+(2, N'Nước nóng không hoạt động', '2024-10-12', 0, 0),
+(3, N'Phòng cần bảo trì điều hòa', '2024-10-13', 0, 0),
+(4, N'Kiểm tra mạng internet', '2024-10-14', 0, 0),
+(5, N'Cần bổ sung đồ dùng sinh hoạt', '2024-10-15', 0, 0);
 
 --Nhập dữ liệu bảng CanBo
-INSERT INTO CANBO (ID_CANBO, MACB, TAIKHOAN, MATKHAU, TENCB, GIOITINH, CMND_CCCD, DIACHI, EMAIL, SDT, QUANTRI, DAXOA)
+INSERT INTO CANBO (MACB, TAIKHOAN, MATKHAU, TENCB, GIOITINH, CMND_CCCD, DIACHI, EMAIL, SDT, QUANTRI, DAXOA)
 VALUES 
-(0241, 'CB01', 'adm1', 'Admin@123', N'Nguyễn Văn Dũng', 1, 151234, 'TP HCM', 'admin1@example.com', '098765432', 1, 0),
-(0242, 'CB02', 'adm2', 'Admin@456', N'Trần Thị Nga', 0, 987654, 'TP HCM', 'admin2@example.com', '012345678', 0, 0),
-(0243, 'CB03', 'adm3', 'Admin@789', N'Lê Văn An', 1, 125853, 'TP HCM', 'admin3@example.com', '087654321', 0, 0),
-(0244, 'CB04', 'adm4', 'Admin@321', N'Nguyễn Thị Mai', 0, 987432, 'TP HCM', 'admin4@example.com', '076542109', 0, 0),
-(0245, 'CB05', 'adm5', 'Admin@654', N'Phạm Văn Tùng', 1, 124584, 'TP HCM', 'admin5@example.com', '064321098', 0, 0);
+('CB01', 'adm1', 'Admin@123', N'Nguyễn Văn Dũng', 1, 151234, 'TP HCM', 'admin1@example.com', '098765432', 1, 0),
+('CB02', 'adm2', 'Admin@456', N'Trần Thị Nga', 0, 987654, 'TP HCM', 'admin2@example.com', '012345678', 0, 0),
+('CB03', 'adm3', 'Admin@789', N'Lê Văn An', 1, 125853, 'TP HCM', 'admin3@example.com', '087654321', 0, 0),
+('CB04', 'adm4', 'Admin@321', N'Nguyễn Thị Mai', 0, 987432, 'TP HCM', 'admin4@example.com', '076542109', 0, 0),
+('CB05', 'adm5', 'Admin@654', N'Phạm Văn Tùng', 1, 124584, 'TP HCM', 'admin5@example.com', '064321098', 0, 0);
 
 --Nhập dữ liệu mẫu bảng NhanVien
-INSERT INTO NHANVIEN (ID_NHANVIEN, MANV, TAIKHOAN, MATKHAU, TENNV, GIOITINH, CMND_CCCD, DIACHI, EMAIL, SDT, DAXOA)
+INSERT INTO NHANVIEN (MANV, TAIKHOAN, MATKHAU, TENNV, GIOITINH, CMND_CCCD, DIACHI, EMAIL, SDT, DAXOA)
 VALUES 
-(31, 'NV01', 'st1', 'Staff@123', N'Nguyễn Văn Bình', 1, 05468, 'TPHCM', 'staff1@example.com', '01234567', 0),
-(32, 'NV02', 'st2', 'Staff@456', N'Trần Thị Hoa', 0, 06521, 'TPHCM', 'staff2@example.com', '07654321', 0),
-(33, 'NV03', 'st3', 'Staff@789', N'Nguyễn Thị Ngân', 0, 05689, 'TPHCM', 'staff3@example.com', '08765432', 0),
-(34, 'NV04', 'st4', 'Staff@321', N'Nguyễn Văn Đại', 1, 05487, 'TPHCM', 'staff4@example.com', '09876543', 0),
-(35, 'NV05', 'st5', 'Staff@654', N'Trần Công Minh', 1, 01654, 'TPHCM', 'staff5@example.com', '01234560', 0);
+('NV01', 'st1', 'Staff@123', N'Nguyễn Văn Bình', 1, 05468, 'TPHCM', 'staff1@example.com', '01234567', 0),
+('NV02', 'st2', 'Staff@456', N'Trần Thị Hoa', 0, 06521, 'TPHCM', 'staff2@example.com', '07654321', 0),
+('NV03', 'st3', 'Staff@789', N'Nguyễn Thị Ngân', 0, 05689, 'TPHCM', 'staff3@example.com', '08765432', 0),
+('NV04', 'st4', 'Staff@321', N'Nguyễn Văn Đại', 1, 05487, 'TPHCM', 'staff4@example.com', '09876543', 0),
+('NV05', 'st5', 'Staff@654', N'Trần Công Minh', 1, 01654, 'TPHCM', 'staff5@example.com', '01234560', 0);
 
 --Nhập dữ liệu mẫu bảng Sinh Vien
 INSERT INTO SINHVIEN (MASV, ID_PHONG, TENSV, GIOITINH, CMND_CCCD, EMAIL, SDT, NGAYLAMHOPDONG, DAXOA)
 VALUES 
-('S001', 101, N'Nguyễn Văn An', 1, 123456789, 'an@example.com', '0987654321', '2024-09-01', 0),
-('S002', 102, N'Trần Thị Bình', 0, 987654321, 'binh@example.com', '0912345678', '2024-09-02', 0),
-('S003', 201, N'Lê Văn Cường', 1, 234567890, 'cuong@example.com', '0923456789', '2024-09-03', 0),
-('S004', 202, N'Nguyễn Thị Duyên', 0, 345678901, 'duyen@example.com', '0934567890', '2024-09-04', 0),
-('S005', 301, N'Phạm Văn Đức', 1, 456789012, 'duc@example.com', '0945678901', '2024-09-05', 0),
-('S006', 302, N'Nguyễn Văn Phát', 1, 567890123, 'fa@example.com', '0956789012', '2024-09-06', 0),
-('S007', 401, N'Trần Thị Giang', 0, 678901234, 'giang@example.com', '0967890123', '2024-09-07', 0),
-('S008', 302, N'Lê Văn Hòa', 1, 789012345, 'hoa@example.com', '0978901234', '2024-09-08', 0),
-('S009', 501, N'Nguyễn Thị Hương', 0, 890123456, 'huong@example.com', '0989012345', '2024-09-09', 0),
-('S010', 402, N'Phạm Văn Huy', 1, 901234567, 'huy@example.com', '0990123456', '2024-09-10', 0);
+('S001', 1, N'Nguyễn Văn An', 1, 123456789, 'an@example.com', '0987654321', '2024-09-01', 0),
+('S002', 2, N'Trần Thị Bình', 0, 987654321, 'binh@example.com', '0912345678', '2024-09-02', 0),
+('S003', 3, N'Lê Văn Cường', 1, 234567890, 'cuong@example.com', '0923456789', '2024-09-03', 0),
+('S004', 4, N'Nguyễn Thị Duyên', 0, 345678901, 'duyen@example.com', '0934567890', '2024-09-04', 0),
+('S005', 5, N'Phạm Văn Đức', 1, 456789012, 'duc@example.com', '0945678901', '2024-09-05', 0),
+('S006', 6, N'Nguyễn Văn Phát', 1, 567890123, 'fa@example.com', '0956789012', '2024-09-06', 0),
+('S007', 7, N'Trần Thị Giang', 0, 678901234, 'giang@example.com', '0967890123', '2024-09-07', 0),
+('S008', 8, N'Lê Văn Hòa', 1, 789012345, 'hoa@example.com', '0978901234', '2024-09-08', 0),
+('S009', 9, N'Nguyễn Thị Hương', 0, 890123456, 'huong@example.com', '0989012345', '2024-09-09', 0),
+('S010', 10, N'Phạm Văn Huy', 1, 901234567, 'huy@example.com', '0990123456', '2024-09-10', 0);
 
 --Nhập dữ liệu mẫu bảng ThanNhan
 INSERT INTO THANNHAN (MASV, TENTN, SDT, QUANHE)
@@ -461,7 +461,6 @@ BEGIN
 
     RETURN @SoLuongSinhVien;
 END;
-
 
 -- 3. Kiểm tra phòng có trống hay không
 CREATE FUNCTION FUNC_KiemTraPhongTrong
@@ -729,18 +728,12 @@ SELECT
     dien.CHISOCUOI AS ChiSoCuoiDien,
     nuoc.CHISODAU AS ChiSoDauNuoc,
     nuoc.CHISOCUOI AS ChiSoCuoiNuoc
-FROM 
-    HOADON_DIENNUOC hd
-JOIN 
-    PHONG phong ON hd.ID_PHONG = phong.ID_PHONG
-JOIN 
-    DAYPHONG dp ON phong.ID_DAY = dp.ID_DAY
-JOIN 
-    DONGIA dongia ON hd.ID_DONGIA = dongia.ID_DONGIA
-JOIN 
-    CONGTODIEN dien ON hd.ID_DIEN = dien.ID_DIEN
-JOIN 
-    CONGTONUOC nuoc ON hd.ID_NUOC = nuoc.ID_NUOC;
+FROM HOADON_DIENNUOC hd
+JOIN PHONG phong ON hd.ID_PHONG = phong.ID_PHONG
+JOIN DAYPHONG dp ON phong.ID_DAY = dp.ID_DAY
+JOIN DONGIA dongia ON hd.ID_DONGIA = dongia.ID_DONGIA
+JOIN CONGTODIEN dien ON hd.ID_DIEN = dien.ID_DIEN
+JOIN CONGTONUOC nuoc ON hd.ID_NUOC = nuoc.ID_NUOC;
 
 -- 5.BANG VIEW DAY PHONG
 CREATE VIEW VIEW_DayPhong AS
