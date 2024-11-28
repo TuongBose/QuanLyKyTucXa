@@ -16,6 +16,67 @@ namespace DoAnDBMS.Controllers
             return View(db.VIEW_CANBOs);
         }
 
+        public ActionResult ThemCanBo(FormCollection Data, Models.CANBO NewCanBo)
+        {
+            var macb = Data["MACB"];
+            var taikhoan = Data["TaiKhoan"];
+            var tencb = Data["TenCB"];
+            var sdt = Data["SDT"];
+            var email = Data["Email"];
+
+            bool hasError=false;
+
+            if (String.IsNullOrEmpty(macb))
+            {
+                TempData["Message"] = "Mã cán bộ không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(taikhoan))
+            {
+                TempData["Message"] = "Tài khoản cán bộ không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(tencb))
+            {
+                TempData["Message"] = "Tên cán bộ không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(sdt))
+            {
+                TempData["Message"] = "Số điện thoại không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(email))
+            {
+                TempData["Message"] = "Email không được bỏ trống";
+                hasError = true;
+            }
+
+            if(hasError)
+            return View();
+            else
+            {
+                NewCanBo.MACB = macb;
+                NewCanBo.TAIKHOAN = taikhoan;
+                NewCanBo.TENCB = tencb;
+                NewCanBo.SDT = sdt;
+                NewCanBo.EMAIL = email;
+
+                Models.CANBO hasCanbo=db.CANBOs.FirstOrDefault(x=>x.MACB== macb);
+                if (hasCanbo == null)
+                {
+                    db.CANBOs.InsertOnSubmit(NewCanBo);
+                    db.SubmitChanges();
+                    return RedirectToAction("CanBo", "CanBo");
+                }
+                else
+                {
+                    TempData["Message"] = "Mã cán bộ đã tồn tại";
+                    return View();
+                }
+            }
+        }
+
         public ActionResult NhanVien()
         {
             return View(db.VIEW_NHANVIENs);

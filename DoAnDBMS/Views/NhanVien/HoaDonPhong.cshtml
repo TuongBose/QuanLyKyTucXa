@@ -5,63 +5,109 @@
     Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
 }
 
-<h2>HoaDonPhong</h2>
+<style>
+    .text-right {
+        margin-bottom: 10px;
+    }
+</style>
 
-<table class="table">
-    <tr>
-        <th>
-            Mã dãy phòng
-        </th>
-        <th>
-            Mã Phòng
-        </th>
-        <th>
-            Năm
-        </th>
-        <th>
-           Kỳ
-        </th>
-        <th>
-            Đơn giá
-        </th>
-        <th>
-            Thành Tiền
-        </th>
-        <th>
-            Trang thái
-        </th>
-        <th></th>
-    </tr>
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Hóa đơn phòng</h1>
+        <p class="text-right">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                Thêm mới
+            </button>
+        </p>
+        <hr />
+        <table class="table table-bordered table-striped table-hover">
+            <tr class="table table-dark">
+                <th>
+                    Mã dãy phòng
+                </th>
+                <th>
+                    Mã Phòng
+                </th>
+                <th>
+                    Năm
+                </th>
+                <th>
+                    Kỳ
+                </th>
+                <th>
+                    Đơn giá
+                </th>
+                <th>
+                    Thành Tiền
+                </th>
+                <th>
+                    Trang thái
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MADAYPHONG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAPHONG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NAM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DONGIA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.THANHTIEN)
-        </td>
-        @if(item.TRANGTHAI==true)
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MADAYPHONG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MAPHONG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NAM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DONGIA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.THANHTIEN)
+                    </td>
+                    @if (item.TRANGTHAI == true)
+                    {
+                        <td>Đã thu tiền</td>
+                    }
+                    else
+                    {
+                        <td>Chưa thu tiền</td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<!-- Modal Thêm mới -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Thêm mới hóa đơn phòng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form Thêm mới -->
+                @using (Html.BeginForm("ThemHoaDon", "HoaDonPhong", FormMethod.Post, new { @class = "form" }))
                 {
-<td>Đã thu tiền</td>
-        }
-        else
-                {
-                    <td>Chưa thu tiền</td>
+                    <div class="mb-3">
+                        <label for="MaPhong" class="form-label">Mã phòng</label>
+                        <input type="text" class="form-control" id="MaPhong" name="MaPhong" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="NgayTao" class="form-label">Ngày tạo</label>
+                        <input type="date" class="form-control" id="NgayTao" name="NgayTao" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="ThanhTien" class="form-label">Thành tiền</label>
+                        <input type="number" class="form-control" id="ThanhTien" name="ThanhTien" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
                 }
-    </tr>
-}
-
-</table>
+            </div>
+        </div>
+    </div>
+</div>

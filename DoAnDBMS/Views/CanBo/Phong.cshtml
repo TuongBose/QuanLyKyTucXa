@@ -5,37 +5,83 @@
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
 }
 
-<h2>Phong</h2>
-
-<table class="table">
-    <tr>
-        <th>Dãy phòng</th>
-        <th>Mã Phòng</th>
-        <th>Tài khoản</th>
-        <th>Số lượng</th>
-        <th>Đơn giá</th>
-        <th>Mô tả khác</th>
-        <th>Tình trạng</th>
-        <th>Trạng thái</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.DayPhong</td>
-            <td>@item.MAPHONG</td>
-            <td>@item.TAIKHOAN</td>
-            <td>@item.SOLUONGSV</td>
-            <td>@item.DONGIA</td>
-            <td>@item.MOTAKHAC</td>
-            <td>@item.TINHTRANG</td>
-            @if (item.TRANGTHAI == true)
-            {
-                <td>Có người ở</td>
-            }
-            else
-            {
-                <td>Không có người ở</td>
-            }
-        </tr>
+<style>
+    .text-right {
+        margin-bottom: 10px;
     }
-</table>
+</style>
+
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Phòng</h1>
+        <p class="text-right">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                Thêm mới
+            </button>
+        </p>
+        <hr />
+        <table class="table table-bordered table-striped table-hover">
+            <tr class="table table-dark">
+                <th>Dãy phòng</th>
+                <th>Mã Phòng</th>
+                <th>Tài khoản</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Mô tả khác</th>
+                <th>Tình trạng</th>
+                <th>Trạng thái</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DayPhong</td>
+                    <td>@item.MAPHONG</td>
+                    <td>@item.TAIKHOAN</td>
+                    <td>@item.SOLUONGSV</td>
+                    <td>@item.DONGIA</td>
+                    <td>@item.MOTAKHAC</td>
+                    <td>@item.TINHTRANG</td>
+                    @if (item.TRANGTHAI == true)
+                    {
+                        <td>Có người ở</td>
+                    }
+                    else
+                    {
+                        <td>Không có người ở</td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<!-- Modal Thêm mới -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Thêm mới hóa đơn phòng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form Thêm mới -->
+                @using (Html.BeginForm("ThemHoaDon", "HoaDonPhong", FormMethod.Post, new { @class = "form" }))
+                {
+                    <div class="mb-3">
+                        <label for="MaPhong" class="form-label">Mã phòng</label>
+                        <input type="text" class="form-control" id="MaPhong" name="MaPhong" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="NgayTao" class="form-label">Ngày tạo</label>
+                        <input type="date" class="form-control" id="NgayTao" name="NgayTao" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="ThanhTien" class="form-label">Thành tiền</label>
+                        <input type="number" class="form-control" id="ThanhTien" name="ThanhTien" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
