@@ -1,0 +1,42 @@
+﻿@model IEnumerable<nhanvien.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Danh sách nhân viên";
+}
+
+<h2>Danh sách nhân viên</h2>
+
+<a href="@Url.Action("Create", "NhanVien")" class="btn btn-primary">Thêm nhân viên</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Mã NV</th>
+            <th>Tên nhân viên</th>
+            <th>Giới tính</th>
+            <th>CMND/CCCD</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var nhanVien in Model)
+        {
+            <tr>
+                <td>@nhanVien.MANV</td>
+                <td>@nhanVien.TENNV</td>
+                <td>@(nhanVien.GIOITINH ? "Nam" : "Nữ")</td>
+                <td>@nhanVien.CMND_CCCD</td>
+                <td>@nhanVien.DIACHI</td>
+                <td>@nhanVien.EMAIL</td>
+                <td>@nhanVien.SDT</td>
+                <td>
+                    <a href="@Url.Action("Edit", "NhanVien", new { id = nhanVien.ID_NHANVIEN })" class="btn btn-warning btn-sm">Sửa</a>
+                    <a href="@Url.Action("Delete", "NhanVien", new { id = nhanVien.ID_NHANVIEN })" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa nhân viên này?');">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

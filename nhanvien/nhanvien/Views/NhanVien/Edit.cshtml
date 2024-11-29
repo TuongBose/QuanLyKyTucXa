@@ -1,0 +1,60 @@
+﻿@model nhanvien.Models.NhanVien
+
+@{
+    ViewBag.Title = "Chỉnh sửa nhân viên";
+}
+
+<h2>Chỉnh sửa thông tin nhân viên</h2>
+
+@using (Html.BeginForm("Edit", "NhanVien", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.ID_NHANVIEN)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MANV)
+        @Html.TextBoxFor(m => m.MANV, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TAIKHOAN)
+        @Html.TextBoxFor(m => m.TAIKHOAN, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MATKHAU)
+        @Html.PasswordFor(m => m.MATKHAU, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TENNV)
+        @Html.TextBoxFor(m => m.TENNV, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.GIOITINH, "Giới tính")
+        @Html.DropDownListFor(m => m.GIOITINH, new SelectList(new[] { new { Text = "Nam", Value = "true" }, new { Text = "Nữ", Value = "false" } }, "Value", "Text"), "--Chọn giới tính--", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CMND_CCCD)
+        @Html.TextBoxFor(m => m.CMND_CCCD, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DIACHI)
+        @Html.TextBoxFor(m => m.DIACHI, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.EMAIL)
+        @Html.TextBoxFor(m => m.EMAIL, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SDT)
+        @Html.TextBoxFor(m => m.SDT, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a href="@Url.Action("Index", "NhanVien")" class="btn btn-secondary">Quay lại</a>
+}
