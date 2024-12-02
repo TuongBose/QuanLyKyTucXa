@@ -1,0 +1,109 @@
+﻿@model DoAnDBMS.Models.CANBO
+@{
+    ViewBag.Title = "ChinhSuaCanBo";
+    Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+}
+
+<style>
+    .text-right {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Chỉnh sửa Cán bộ</h1>
+        <p class="text-right">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                Thêm mới
+            </button>
+        </p>
+        <hr />
+        @using (Html.BeginForm("ChinhSuaCanBo", "CanBo", FormMethod.Post, new { @class = "form" }))
+        {
+            @Html.Hidden("ID", Model.ID_CANBO)
+            <label class="form-label">Mã Cán bộ</label>
+            <div>
+                @Html.TextBox("MACB", Model.MACB, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập mã cán bộ"
+           })
+            </div>
+
+            <label class="form-label">Tài khoản</label>
+            <div>
+                @Html.TextBox("TaiKhoan", Model.TAIKHOAN, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập tài khoản cán bộ"
+           })
+            </div>
+
+            <label class="form-label">Mật khẩu</label>
+            <div>
+                @Html.TextBox("MatKhau", Model.MATKHAU, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập mật khẩu"
+           })
+            </div>
+
+            <label class="form-label">Tên cán bộ</label>
+            <div>
+                @Html.TextBox("TenCB", Model.TENCB, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập tên cán bộ"
+           })
+            </div>
+
+            <label class="form-label">Giới tính</label>
+            <div>
+                @Html.DropDownList("GioiTinh", ViewBag.GioiTinhList as List<SelectListItem>, "Chọn giới tính", new { @class = "form-control" })
+            </div>
+
+            <label class="form-label">Số CCCD</label>
+            <div>
+                @Html.TextBox("CCCD", Model.CMND_CCCD, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập số CCCD"
+           })
+            </div>
+
+            <label class="form-label">Địa chỉ</label>
+            <div>
+                @Html.TextBox("DiaChi", Model.DIACHI, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập địa chỉ"
+           })
+            </div>
+
+            <label class="form-label">Số điện thoại</label>
+            <div>
+                @Html.TextBox("SDT", Model.SDT, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập số điện thoại"
+           })
+            </div>
+
+            <label class="form-label">Email</label>
+            <div>
+                @Html.TextBox("Email", Model.EMAIL, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập Email"
+           })
+            </div>
+
+            <label class="form-label">Quản Trị</label>
+            <input type="checkbox" name="QUANTRI" value="true" />
+            <br />
+            <button type="submit" class="btn btn-primary btn-center">Lưu</button>
+        }
+    </div>
+    </div>
+    

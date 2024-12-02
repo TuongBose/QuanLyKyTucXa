@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<DoAnDBMS.Models.VIEW_CANBO>
-
 @{
     ViewBag.Title = "CanBo";
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
@@ -27,6 +26,7 @@
                 <th>Họ và tên</th>
                 <th>Điện thoại</th>
                 <th>Email</th>
+                <th>Hành Động</th>
             </tr>
             @foreach (var item in Model)
             {
@@ -36,6 +36,11 @@
                     <td>@item.TENCB</td>
                     <td>@item.SDT</td>
                     <td>@item.EMAIL</td>
+                    <td></td>
+                    <td>
+                        <a href="@Url.Action("ChinhSuaCanBo", "CanBo", new { @id = item.ID_CANBO }, null)" class="btn btn-primary">Sửa</a>
+                        <a href="#" class="btn btn-danger">Xóa</a>
+                    </td>
                 </tr>
             }
         </table>
@@ -69,6 +74,15 @@
                    {
                        @class = "form-control",
                        @placeholder = "Nhập tài khoản cán bộ"
+                   })
+                    </div>
+
+                    <label class="form-label">Mật khẩu</label>
+                    <div>
+                        @Html.TextBox("MatKhau", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập mật khẩu"
                    })
                     </div>
 
