@@ -5,6 +5,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DoAnDBMS.Models;
 
 namespace DoAnDBMS.Controllers
 {
@@ -118,7 +119,7 @@ namespace DoAnDBMS.Controllers
             var email = Data["Email"];
             var sdt = Data["SDT"];
             bool quantri;
-            if (Data["QUANTRI"] == "true")
+            if (Data["QianTri"] == "true")
             {
                 quantri = true;
             }
@@ -232,9 +233,34 @@ namespace DoAnDBMS.Controllers
             return View(db.VIEW_HoaDonDienNuocs);
         }
 
+        [HttpGet]
         public ActionResult HoaDonPhong()
         {
-            return View(db.VIEW_HOADONPHONGs);
+            var list_viewhoadondiennuoc = db.VIEW_HoaDonDienNuocs.ToList();
+            var list_hoadonphong = list_viewhoadondiennuoc.Select(item => new VIEW_HOADONPHONG
+            {
+                MADAYPHONG = item.DayPhong,
+                MAPHONG = item.MaPhong,
+                NAM = item.NAM,
+                KY = item.THANG,
+                DONGIA = item.DonGiaPhong,
+                THANHTIEN_HOADON_DIENNUOC = ((item.ChiSoCuoiDien - item.ChiSoDauDien) * item.DonGiaDien) +
+                ((item.ChiSoCuoiNuoc - item.ChiSoDauNuoc) * item.DonGiaNuoc),
+                THANHTIEN_DONGIAPHONG_HDDN = (((item.ChiSoCuoiDien - item.ChiSoDauDien) * item.DonGiaDien) +
+                ((item.ChiSoCuoiNuoc - item.ChiSoDauNuoc) * item.DonGiaNuoc)) + item.DonGiaPhong,
+                TRANGTHAI = item.TRANGTHAI
+            }).ToList();
+            return View(list_hoadonphong);
+        }
+
+        [HttpPost]
+        public ActionResult ChinhSua_HDP_HDDN(FormCollection Data)
+        {
+            var madayphong = Data["MaDayPhong"];
+            var maphong = Data["MaPhong"];
+            var nam = Data["Nam"];
+            var ky = Data["Ky"];
+            return View();
         }
 
         [HttpGet]

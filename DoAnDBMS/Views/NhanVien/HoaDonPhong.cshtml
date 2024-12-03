@@ -14,6 +14,13 @@
 <div class="content">
     <div class="card shadow p-4">
         <h1 class="text-center">Hóa đơn phòng</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
         <p class="text-right">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                 Thêm mới
@@ -35,15 +42,15 @@
                     Kỳ
                 </th>
                 <th>
-                    Đơn giá
+                    Đơn giá phòng
                 </th>
                 <th>
-                    Thành Tiền
+                    Hóa đơn điện nước
                 </th>
+                <th>Thành tiền</th>
                 <th>
                     Trang thái
                 </th>
-                <th></th>
             </tr>
 
             @foreach (var item in Model)
@@ -65,8 +72,9 @@
                         @Html.DisplayFor(modelItem => item.DONGIA)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.THANHTIEN)
+                        @Html.DisplayFor(modelItem => item.THANHTIEN_HOADON_DIENNUOC)
                     </td>
+                    <td>@Html.DisplayFor(modelItem => item.THANHTIEN_DONGIAPHONG_HDDN)</td>
                     @if (item.TRANGTHAI == true)
                     {
                         <td>Đã thu tiền</td>

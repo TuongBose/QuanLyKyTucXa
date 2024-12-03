@@ -13,11 +13,13 @@
 <div class="content">
     <div class="card shadow p-4">
         <h1 class="text-center">Chỉnh sửa Cán bộ</h1>
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới
-            </button>
-        </p>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
         <hr />
         @using (Html.BeginForm("ChinhSuaCanBo", "CanBo", FormMethod.Post, new { @class = "form" }))
         {
@@ -100,10 +102,9 @@
             </div>
 
             <label class="form-label">Quản Trị</label>
-            <input type="checkbox" name="QUANTRI" value="true" />
+            <input type="checkbox" name="QuanTri" value="true" />
             <br />
-            <button type="submit" class="btn btn-primary btn-center">Lưu</button>
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
         }
     </div>
-    </div>
-    
+</div>

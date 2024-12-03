@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "CanBo";
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+    DoAnDBMS.Models.CANBO TaiKhoan = Session["Account"] as DoAnDBMS.Models.CANBO;
 }
 
 <style>
@@ -13,11 +14,21 @@
 <div class="content">
     <div class="card shadow p-4">
         <h1 class="text-center">Cán bộ</h1>
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới
-            </button>
-        </p>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
+        @if (TaiKhoan.QUANTRI == true)
+        {
+            <p class="text-right">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                    Thêm mới cán bộ
+                </button>
+            </p>
+        }
         <hr />
         <table class="table table-bordered table-striped table-hover">
             <tr class="table table-dark">
@@ -36,11 +47,13 @@
                     <td>@item.TENCB</td>
                     <td>@item.SDT</td>
                     <td>@item.EMAIL</td>
-                    <td></td>
-                    <td>
-                        <a href="@Url.Action("ChinhSuaCanBo", "CanBo", new { @id = item.ID_CANBO }, null)" class="btn btn-primary">Sửa</a>
-                        <a href="#" class="btn btn-danger">Xóa</a>
-                    </td>
+                    @if (TaiKhoan.QUANTRI == true)
+                    {
+                        <td>
+                            <a href="@Url.Action("ChinhSuaCanBo", "CanBo", new { @id = item.ID_CANBO }, null)" class="btn btn-primary">Sửa</a>
+                            <a href="#" class="btn btn-danger">Xóa</a>
+                        </td>
+                    }
                 </tr>
             }
         </table>
@@ -113,7 +126,7 @@
                    })
                     </div>
                     <br />
-                    <button type="submit" class="btn btn-primary btn-center">Lưu</button>
+                    <button type="submit" class="btn btn-primary btn-center">Xác nhận</button>
                 }
             </div>
         </div>

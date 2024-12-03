@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "ThemChiSoDienNuocCongTo";
+    Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
+}
+
+<style>
+    .text-right {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Thêm chỉ số điện nước công tơ</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
+        <hr />
+        @using (Html.BeginForm("ThemChiSoDienNuocCongTo", "NhanVien", FormMethod.Post, new { @class = "form" }))
+        {
+            <label class="form-label">Mã phòng</label>
+            <div>
+                @Html.DropDownList("MaPhong", ViewBag.ID_Phong as SelectList, "Chọn Mã phòng", new
+           {
+               @class = "form-control",
+               @placeholder = "Chọn mã phòng"
+           })
+            </div>
+
+            <label class="form-label">Điện tháng trước</label>
+            <div>
+                @Html.TextBox("DienThangTruoc", "", new
+           {
+               @class = "form-control",
+               @placeholder = "Điện tháng trước"
+           })
+            </div>
+
+            <label class="form-label">Điện tháng này</label>
+            <div>
+                @Html.TextBox("DienThangNay", "", new
+           {
+               @class = "form-control",
+               @placeholder = "Điện tháng này"
+           })
+            </div>
+
+            <label class="form-label">Nước tháng trước</label>
+            <div>
+                @Html.TextBox("NuocThangTruoc", "", new
+           {
+               @class = "form-control",
+               @placeholder = "Nước tháng trước"
+           })
+            </div>
+
+            <label class="form-label">Nước tháng này</label>
+            <div>
+                @Html.TextBox("NuocThangNay", "", new
+           {
+               @class = "form-control",
+               @placeholder = "Nước tháng này"
+           })
+            </div>
+
+            <label class="form-label">Tháng điện</label>
+            <div>
+                <input type="text" name="ThangDien" value="@DateTime.Now.Month" class="form-control" readonly />
+            </div>
+
+            <label class="form-label">Năm điện</label>
+            <div>
+                <input type="text" name="NamDien" value="@DateTime.Now.Year" class="form-control" readonly />
+            </div>
+
+            <label class="form-label">Tháng nước</label>
+            <div>
+                <input type="text" name="ThangNuoc" value="@DateTime.Now.Month" class="form-control" readonly />
+            </div>
+
+            <label class="form-label">Năm nước</label>
+            <div>
+                <input type="text" name="NamNuoc" value="@DateTime.Now.Year" class="form-control" readonly />
+            </div>
+
+            <br />
+            <button type="submit" class="btn btn-primary btn-center">Xác nhận</button>
+        }
+    </div>
+</div>
+
+

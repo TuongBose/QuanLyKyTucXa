@@ -14,9 +14,16 @@
 <div class="content">
     <div class="card shadow p-4">
         <h1 class="text-center">Hỗ trợ</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
         <p class="text-right">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới
+                Thêm mới hỗ trợ
             </button>
         </p>
         <hr />
@@ -50,13 +57,13 @@
                     </td>
                     @if (item.TRANGTHAI == true)
                     {
-                        <td>
+                        <td class="text-bg-success">
                             Đã xử lý
                         </td>
                     }
                     else
                     {
-                        <td>
+                        <td class="text-bg-danger">
                             Chưa xử lý
                         </td>
                     }
@@ -77,21 +84,32 @@
             </div>
             <div class="modal-body">
                 <!-- Form Thêm mới -->
-                @using (Html.BeginForm("ThemHoaDon", "HoaDonPhong", FormMethod.Post, new { @class = "form" }))
+                @using (Html.BeginForm("ThemHoTro", "NhanVien", FormMethod.Post, new { @class = "form" }))
                 {
-                    <div class="mb-3">
-                        <label for="MaPhong" class="form-label">Mã phòng</label>
-                        <input type="text" class="form-control" id="MaPhong" name="MaPhong" required />
+                    <label class="form-label">Mã phòng</label>
+                    <div>
+                        @Html.DropDownList("MaPhong", ViewBag.ID_Phong as SelectList, "Chọn Mã phòng", new
+                   {
+                       @class = "form-control",
+                       @placeholder = ""
+                   })
                     </div>
-                    <div class="mb-3">
-                        <label for="NgayTao" class="form-label">Ngày tạo</label>
-                        <input type="date" class="form-control" id="NgayTao" name="NgayTao" required />
+
+                    <label class="form-label">Nội dung</label>
+                    <div>
+                        @Html.TextBox("NoiDung", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Chọn mã phòng"
+                   })
                     </div>
-                    <div class="mb-3">
-                        <label for="ThanhTien" class="form-label">Thành tiền</label>
-                        <input type="number" class="form-control" id="ThanhTien" name="ThanhTien" required />
+
+                    <label class="form-label">Ngày gửi</label>
+                    <div>
+                        <input type="date" name="NgayGui" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
                     </div>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-center">Xác nhận</button>
                 }
             </div>
         </div>

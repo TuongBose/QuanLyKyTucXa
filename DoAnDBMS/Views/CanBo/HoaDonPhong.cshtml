@@ -14,6 +14,13 @@
 <div class="content">
     <div class="card shadow p-4">
         <h1 class="text-center">Hóa đơn phòng</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
         <p class="text-right">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                 Thêm mới
@@ -35,15 +42,16 @@
                     Kỳ
                 </th>
                 <th>
-                    Đơn giá
+                    Đơn giá phòng
                 </th>
                 <th>
-                    Thành Tiền
+                    Hóa đơn điện nước
                 </th>
+                <th>Thành tiền</th>
                 <th>
                     Trang thái
                 </th>
-                <th></th>
+                <th>Hành động</th>
             </tr>
 
             @foreach (var item in Model)
@@ -65,8 +73,9 @@
                         @Html.DisplayFor(modelItem => item.DONGIA)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.THANHTIEN)
+                        @Html.DisplayFor(modelItem => item.THANHTIEN_HOADON_DIENNUOC)
                     </td>
+                    <td>@Html.DisplayFor(modelItem => item.THANHTIEN_DONGIAPHONG_HDDN)</td>
                     @if (item.TRANGTHAI == true)
                     {
                         <td>Đã thu tiền</td>
@@ -74,40 +83,19 @@
                     else
                     {
                         <td>Chưa thu tiền</td>
+                        <td>
+                            @using (Html.BeginForm("ChinhSua_HDP_HDDN", "CanBo"))
+                            {
+                                @Html.Hidden("MaDayPhong", item.MADAYPHONG)
+                                @Html.Hidden("MaPhong", item.MAPHONG)
+                                @Html.Hidden("Nam", item.NAM)
+                                @Html.Hidden("Ky", item.KY)
+                                <button class="btn btn-primary" type="submit">Xác nhận đã thu tiền</button>
+                            }
+                        </td>
                     }
                 </tr>
             }
         </table>
-    </div>
-</div>
-
-<!-- Modal Thêm mới -->
-<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Thêm mới hóa đơn phòng</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Form Thêm mới -->
-                @using (Html.BeginForm("ThemHoaDon", "HoaDonPhong", FormMethod.Post, new { @class = "form" }))
-                {
-                    <div class="mb-3">
-                        <label for="MaPhong" class="form-label">Mã phòng</label>
-                        <input type="text" class="form-control" id="MaPhong" name="MaPhong" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="NgayTao" class="form-label">Ngày tạo</label>
-                        <input type="date" class="form-control" id="NgayTao" name="NgayTao" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="ThanhTien" class="form-label">Thành tiền</label>
-                        <input type="number" class="form-control" id="ThanhTien" name="ThanhTien" required />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
-                }
-            </div>
-        </div>
     </div>
 </div>

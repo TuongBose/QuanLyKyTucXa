@@ -204,37 +204,6 @@
       <Column Name="NGAYAPDUNG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.VIEW_HoaDonDienNuoc" Member="VIEW_HoaDonDienNuocs">
-    <Type Name="VIEW_HoaDonDienNuoc">
-      <Column Name="ID_HDDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_PHONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_DONGIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_DIEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_NUOC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="THANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="DayPhong" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
-      <Column Name="MaPhong" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
-      <Column Name="DonGiaDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DonGiaNuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ChiSoDauDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ChiSoCuoiDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ChiSoDauNuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ChiSoCuoiNuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.VIEW_HOADONPHONG" Member="VIEW_HOADONPHONGs">
-    <Type Name="VIEW_HOADONPHONG">
-      <Column Name="MADAYPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
-      <Column Name="MAPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
-      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="KY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DONGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="THANHTIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.VIEW_HOTRO" Member="VIEW_HOTROs">
     <Type Name="VIEW_HOTRO">
       <Column Name="ID_HOTRO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -256,6 +225,39 @@
       <Column Name="EMAIL" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
       <Column Name="DAXOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_HoaDonDienNuoc" Member="VIEW_HoaDonDienNuocs">
+    <Type Name="VIEW_HoaDonDienNuoc">
+      <Column Name="ID_HDDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PHONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DONGIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DIEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_NUOC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="THANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DayPhong" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhong" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGiaPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGiaDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGiaNuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChiSoDauDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChiSoCuoiDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChiSoDauNuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChiSoCuoiNuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_HOADONPHONG" Member="VIEW_HOADONPHONGs">
+    <Type Name="VIEW_HOADONPHONG">
+      <Column Name="MADAYPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MAPHONG" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANHTIEN_HOADON_DIENNUOC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANHTIEN_DONGIAPHONG_HDDN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

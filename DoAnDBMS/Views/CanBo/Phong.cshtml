@@ -14,6 +14,13 @@
 <div class="content">
     <div class="card shadow p-4">
         <h1 class="text-center">Phòng</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
         <p class="text-right">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                 Thêm mới
