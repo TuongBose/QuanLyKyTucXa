@@ -220,11 +220,11 @@ namespace DoAnDBMS.Controllers
                 Models.PHONG hasPhong = db.PHONGs.FirstOrDefault(x => x.MAPHONG == maphong);
                 if (hasPhong != null)
                 {
-                    Models.HOADON_DIENNUOC hasHDDN = db.HOADON_DIENNUOCs.FirstOrDefault(x => x.ID_PHONG == hasPhong.ID_PHONG && x.TRANGTHAI == false);
+                    Models.HOADON_DIENNUOC hasHDDN = db.HOADON_DIENNUOCs.FirstOrDefault(x => x.ID_PHONG == hasPhong.ID_PHONG);
                     if (hasHDDN != null)
                     {
                         if (hasHDDN.THANG == int.Parse(thangdien) && hasHDDN.NAM == int.Parse(namdien)
-                            && hasHDDN.THANG == int.Parse(thangnuoc) && hasHDDN.NAM == int.Parse(namnuoc)) 
+                            && hasHDDN.THANG == int.Parse(thangnuoc) && hasHDDN.NAM == int.Parse(namnuoc))
                         {
                             TempData["Message"] = "Năm hoặc tháng hóa đơn của phòng này đã được lập";
                             return RedirectToAction("ThemChiSoDienNuocCongTo", "NhanVien");
@@ -258,20 +258,24 @@ namespace DoAnDBMS.Controllers
                             Models.DONGIA DG = db.DONGIAs.Where(x => x.TRANGTHAI == true).FirstOrDefault();
                             if (DG != null)
                             {
-                                Models.HOADON_DIENNUOC NewHDDN = new Models.HOADON_DIENNUOC
+                                Models.HOADON_DIENNUOC UpdateHDDN = db.HOADON_DIENNUOCs.FirstOrDefault(x => x.ID_PHONG == hasPhong.ID_PHONG);
+                                Models.HOADON_PHONG UpdateHDP =db.HOADON_PHONGs.FirstOrDefault(x=>x.ID_PHONG==hasPhong.ID_PHONG);
+                                if (UpdateHDDN != null && UpdateHDP!=null)
                                 {
-                                    ID_PHONG = hasPhong.ID_PHONG,
-                                    ID_DONGIA = DG.ID_DONGIA,
-                                    ID_DIEN = CTD.ID_DIEN,
-                                    ID_NUOC = CTN.ID_NUOC,
-                                    THANG = int.Parse(DateTime.Now.Month.ToString()),
-                                    NAM = int.Parse(DateTime.Now.Year.ToString()),
-                                    TRANGTHAI = false
+                                    UpdateHDP.ID_DONGIA = DG.ID_DONGIA;
+                                    UpdateHDP.KY= int.Parse(DateTime.Now.Month.ToString());
+                                    UpdateHDP.NAM = int.Parse(DateTime.Now.Year.ToString());
+                                    UpdateHDP.TRANGTHAI = false;
+
+                                    UpdateHDDN.ID_DONGIA = DG.ID_DONGIA;
+                                    UpdateHDDN.THANG = int.Parse(DateTime.Now.Month.ToString());
+                                    UpdateHDDN.NAM = int.Parse(DateTime.Now.Year.ToString());
+                                    UpdateHDDN.TRANGTHAI = false;
+
+                                    db.SubmitChanges();
+                                    TempData["Message"] = "Thêm thành công";
+                                    return RedirectToAction("HoaDonDienNuoc", "NhanVien");
                                 };
-                                db.HOADON_DIENNUOCs.InsertOnSubmit(NewHDDN);
-                                db.SubmitChanges();
-                                TempData["Message"] = "Thêm thành công";
-                                return RedirectToAction("HoaDonDienNuoc", "NhanVien");
                             }
                         }
                     }

@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "DonGia";
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+    DoAnDBMS.Models.CANBO TaiKhoan = Session["Account"] as DoAnDBMS.Models.CANBO;
 }
 
 <style>
@@ -21,11 +22,14 @@
                 @TempData["Message"]
             </div>
         }
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới
-            </button>
-        </p>
+        @if (TaiKhoan.QUANTRI == true)
+        {
+            <p class="text-right">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                    Thêm mới đơn giá
+                </button>
+            </p>
+        }
         <hr />
         <table class="table table-bordered table-striped table-hover">
             <tr class="table table-dark">
@@ -74,20 +78,40 @@
             </div>
             <div class="modal-body">
                 <!-- Form Thêm mới -->
-                @using (Html.BeginForm("ThemHoaDon", "HoaDonPhong", FormMethod.Post, new { @class = "form" }))
+                @using (Html.BeginForm("ThemDonGia", "CanBo", FormMethod.Post, new { @class = "form" }))
                 {
-                    <div class="mb-3">
-                        <label for="MaPhong" class="form-label">Mã phòng</label>
-                        <input type="text" class="form-control" id="MaPhong" name="MaPhong" required />
+                    <label class="form-label">Mã đơn giá</label>
+                    <div>
+                        @Html.TextBox("MaDonGia", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập mã đơn giá"
+                   })
                     </div>
-                    <div class="mb-3">
-                        <label for="NgayTao" class="form-label">Ngày tạo</label>
-                        <input type="date" class="form-control" id="NgayTao" name="NgayTao" required />
+
+                    <label class="form-label">Đơn giá điện</label>
+                    <div>
+                        @Html.TextBox("DonGiaDien", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập đơn giá điện"
+                   })
                     </div>
-                    <div class="mb-3">
-                        <label for="ThanhTien" class="form-label">Thành tiền</label>
-                        <input type="number" class="form-control" id="ThanhTien" name="ThanhTien" required />
+
+                    <label class="form-label">Đơn giá nước</label>
+                    <div>
+                        @Html.TextBox("DonGiaNuoc", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập đơn giá nước"
+                   })
                     </div>
+
+                    <label class="form-label">Ngày áp dụng</label>
+                    <div>
+                        <input type="date" name="NgayApDung" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
+                    </div>
+                    <br />
                     <button type="submit" class="btn btn-primary">Lưu</button>
                 }
             </div>

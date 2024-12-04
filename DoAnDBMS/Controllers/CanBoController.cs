@@ -223,6 +223,48 @@ namespace DoAnDBMS.Controllers
             return View(db.VIEW_DONGIAs);
         }
 
+        [HttpPost]
+        public ActionResult ThemDonGia(FormCollection Data)
+        {
+            var madongia = Data["MaDonGia"];
+            var dongiadien = int.Parse(Data["DonGiaDien"]);
+            var dongianuoc = int.Parse(Data["DonGiaNuoc"]);
+            var ngayapdung = Data["NgayApDung"];
+
+            DateTime Chuanhoa_ngayapdung;
+            if (!DateTime.TryParse(ngayapdung, out Chuanhoa_ngayapdung))
+            {
+                TempData["Message"] = "Ngày áp dụng không hợp lệ";
+                return RedirectToAction("DonGia", "CanBo");
+            }
+
+            bool hasError = false;
+            
+            if(String.IsNullOrEmpty(madongia))
+            {
+                TempData["Message"] = "Mã đơn giá không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(dongiadien.ToString()))
+            {
+                TempData["Message"] = "Đơn giá điện không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(dongianuoc.ToString()))
+            {
+                TempData["Message"] = "Đơn giá nước không được bỏ trống";
+                hasError = true;
+            }
+
+            if (hasError)
+                return RedirectToAction("DonGia", "CanBo");
+            else
+            {
+                Models.DONGIA hasDG = db.DONGIAs.FirstOrDefault(x => x.MADONGIA == madongia);
+                // Thêm đơn giá
+            }
+        }
+
         public ActionResult HoTro()
         {
             return View(db.VIEW_HOTROs);
@@ -260,7 +302,29 @@ namespace DoAnDBMS.Controllers
             var maphong = Data["MaPhong"];
             var nam = Data["Nam"];
             var ky = Data["Ky"];
-            return View();
+
+            Models.PHONG hasPhong = db.PHONGs.FirstOrDefault(x => x.MAPHONG == maphong);
+            if (hasPhong != null)
+            {
+                Models.HOADON_DIENNUOC hasHDDN = db.HOADON_DIENNUOCs.FirstOrDefault(x => x.ID_PHONG == hasPhong.ID_PHONG
+                && x.TRANGTHAI == false && x.THANG == int.Parse(ky) && x.NAM == int.Parse(nam));
+                if (hasHDDN != null)
+                {
+                    Models.HOADON_PHONG hasHDP = db.HOADON_PHONGs.FirstOrDefault(x => x.ID_PHONG == hasPhong.ID_PHONG
+                    && x.TRANGTHAI == false && x.ID_DONGIA == hasHDDN.ID_DONGIA && x.KY == int.Parse(ky) && x.NAM == int.Parse(nam));
+                    if (hasHDP != null)
+                    {
+                        hasHDDN.TRANGTHAI = true;
+                        hasHDP.TRANGTHAI = true;
+                        db.SubmitChanges();
+                        TempData["Message"] = "Xác nhận thành công";
+                        return RedirectToAction("HoaDonPhong", "CanBo");
+                    }
+                }
+            }
+
+            TempData["Message"] = "Không thành công";
+            return RedirectToAction("HoaDonPhong", "CanBo");
         }
 
         [HttpGet]
