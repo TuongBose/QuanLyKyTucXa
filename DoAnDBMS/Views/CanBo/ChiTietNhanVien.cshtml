@@ -1,7 +1,6 @@
-﻿@model IEnumerable<DoAnDBMS.Models.VIEW_NHANVIEN>
-
+﻿@model DoAnDBMS.Models.NHANVIEN
 @{
-    ViewBag.Title = "NhanVien";
+    ViewBag.Title = "ChiTietNhanVien";
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
 }
 
@@ -13,7 +12,7 @@
 
 <div class="content">
     <div class="card shadow p-4">
-        <h1 class="text-center">Nhân Viên</h1>
+        <h1 class="text-center">Nhân Viên @Model.TENNV</h1>
         <br />
         @if (TempData["Message"] != null)
         {
@@ -21,16 +20,13 @@
                 @TempData["Message"]
             </div>
         }
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới nhân viên
-            </button>
-        </p>
         <hr />
         <table class="table table-bordered table-striped table-hover">
             <tr class="table table-dark">
                 <th>Mã nhân viên</th>
                 <th>Tên nhân viên</th>
+                <th>Tài khoản</th>
+                <th>Mật khẩu</th>
                 <th>Giới tính</th>
                 <th>CMND_CCCD</th>
                 <th>Địa chỉ</th>
@@ -38,12 +34,12 @@
                 <th>Số điện thoại</th>
                 <th></th>
             </tr>
-            @foreach (var item in Model)
-            {
                 <tr>
-                    <td>@item.MANV</td>
-                    <td>@item.TENNV</td>
-                    @if (item.GIOITINH == true)
+                    <td>@Model.MANV</td>
+                    <td>@Model.TENNV</td>
+                    <td>@Model.TAIKHOAN</td>
+                    <td>@Model.MATKHAU</td>
+                    @if (Model.GIOITINH == true)
                     {
                         <td>Nam</td>
                     }
@@ -51,15 +47,16 @@
                     {
                         <td>Nữ</td>
                     }
-                    <td>@item.CMND_CCCD</td>
-                    <td>@item.DIACHI</td>
-                    <td>@item.EMAIL</td>
-                    <td>@item.SDT</td>
+                    <td>@Model.CMND_CCCD</td>
+                    <td>@Model.DIACHI</td>
+                    <td>@Model.EMAIL</td>
+                    <td>@Model.SDT</td>
                     <td>
-                        <a href="@Url.Action("ChiTietNhanVien", "CanBo", new { @manv = item.MANV }, null)" class="btn btn-primary">Thông tin chi tiết</a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                            Sửa thông tin
+                        </button>
                     </td>
                 </tr>
-            }
         </table>
     </div>
 </div>
@@ -74,11 +71,12 @@
             </div>
             <div class="modal-body">
                 <!-- Form Thêm mới -->
-                @using (Html.BeginForm("ThemNhanVien", "CanBo", FormMethod.Post, new { @class = "form" }))
+                @using (Html.BeginForm("SuaNhanVien", "CanBo", FormMethod.Post, new { @class = "form" }))
                 {
+                    @Html.Hidden("ID",Model.ID_NHANVIEN)
                     <label class="form-label">Mã nhân viên</label>
                     <div>
-                        @Html.TextBox("MANV", "", new
+                        @Html.TextBox("MANV", Model.MANV, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập mã nhân viên"
@@ -87,7 +85,7 @@
 
                     <label class="form-label">Tên nhân viên</label>
                     <div>
-                        @Html.TextBox("TenNV", "", new
+                        @Html.TextBox("TenNV", Model.TENNV, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập tên nhân viên"
@@ -96,7 +94,7 @@
 
                     <label class="form-label">Tài khoản</label>
                     <div>
-                        @Html.TextBox("TaiKhoan", "", new
+                        @Html.TextBox("TaiKhoan", Model.TAIKHOAN, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập tài khoản nhân viên"
@@ -105,7 +103,7 @@
 
                     <label class="form-label">Mật khẩu</label>
                     <div>
-                        @Html.TextBox("MatKhau", "", new
+                        @Html.TextBox("MatKhau", Model.MATKHAU, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập mật khẩu"
@@ -119,7 +117,7 @@
 
                     <label class="form-label">CMND_CCCD</label>
                     <div>
-                        @Html.TextBox("CMND", "", new
+                        @Html.TextBox("CMND", Model.CMND_CCCD, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập CMND_CCCD"
@@ -128,7 +126,7 @@
 
                     <label class="form-label">Địa chỉ</label>
                     <div>
-                        @Html.TextBox("DiaChi", "", new
+                        @Html.TextBox("DiaChi", Model.DIACHI, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập địa chỉ"
@@ -137,7 +135,7 @@
 
                     <label class="form-label">Email</label>
                     <div>
-                        @Html.TextBox("Email", "", new
+                        @Html.TextBox("Email", Model.EMAIL, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập email"
@@ -146,7 +144,7 @@
 
                     <label class="form-label">Số điện thoại</label>
                     <div>
-                        @Html.TextBox("SDT", "", new
+                        @Html.TextBox("SDT", Model.SDT, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập số điện thoại"
@@ -159,3 +157,5 @@
         </div>
     </div>
 </div>
+
+

@@ -132,42 +132,42 @@ namespace DoAnDBMS.Controllers
 
             if (String.IsNullOrEmpty(macb))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "Mã cán bộ không được bỏ trống";
                 hasError = true;
             }
             if (String.IsNullOrEmpty(taikhoan))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "Tài khoản không được bỏ trống";
                 hasError = true;
             }
             if (String.IsNullOrEmpty(matkhau))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "Mật khẩu không được bỏ trống";
                 hasError = true;
             }
             if (String.IsNullOrEmpty(cccd))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "CCCD cán bộ không được bỏ trống";
                 hasError = true;
             }
             if (String.IsNullOrEmpty(diachi))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "Địa chỉ không được bỏ trống";
                 hasError = true;
             }
             if (String.IsNullOrEmpty(email))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "Email không được bỏ trống";
                 hasError = true;
             }
             if (String.IsNullOrEmpty(sdt))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "Số điện thoại không được bỏ trống";
                 hasError = true;
             }
             if (String.IsNullOrEmpty(tencb))
             {
-                TempData["Message"] = "";
+                TempData["Message"] = "Tên cán bộ không được bỏ trống";
                 hasError = true;
             }
 
@@ -197,25 +197,487 @@ namespace DoAnDBMS.Controllers
                 }
                 else
                 {
-                    TempData["Message"] = "";
+                    TempData["Message"] = "Không tìm thấy cán bộ";
                     return View();
                 }
             }
         }
 
+        [HttpGet]
         public ActionResult NhanVien()
         {
+            List<SelectListItem> sex = new List<SelectListItem>
+            {
+                new SelectListItem{ Text="Nam", Value="1" },
+                new SelectListItem{ Text="Nữ", Value="0" }
+            };
+            ViewBag.GioiTinhList = sex;
             return View(db.VIEW_NHANVIENs);
         }
 
+        [HttpPost]
+        public ActionResult ThemNhanVien(FormCollection Data)
+        {
+            var manv = Data["MANV"];
+            var taikhoan = Data["TaiKhoan"];
+            var matkhau = Data["MatKhau"];
+            var tennv = Data["TenNV"];
+            var gioitinh = Data["GioiTinh"];
+            var cmnd = Data["CMND"];
+            var diachi = Data["DiaChi"];
+            var email = Data["Email"];
+            var sdt = Data["SDT"];
+
+            bool hasError = false;
+
+            if (String.IsNullOrEmpty(manv))
+            {
+                TempData["Message"] = "Mã nhân viên không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(taikhoan))
+            {
+                TempData["Message"] = "Tài khoản không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(matkhau))
+            {
+                TempData["Message"] = "Mật khẩu không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(tennv))
+            {
+                TempData["Message"] = "Tên nhân viên không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(gioitinh))
+            {
+                TempData["Message"] = "Giới tính không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(cmnd))
+            {
+                TempData["Message"] = "CMND_CCCD không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(diachi))
+            {
+                TempData["Message"] = "Địa chỉ không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(email))
+            {
+                TempData["Message"] = "Email không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(sdt))
+            {
+                TempData["Message"] = "Số điện thoại không được bỏ trống";
+                hasError = true;
+            }
+
+            if(hasError)
+            return RedirectToAction("NhanVien", "CanBo");
+            else
+            {
+                Models.NHANVIEN hasNV = db.NHANVIENs.FirstOrDefault(x => x.MANV == manv);
+                if (hasNV == null)
+                {
+                    Models.NHANVIEN NewNV = new Models.NHANVIEN
+                    {
+                        MANV = manv,
+                        TENNV = tennv,
+                        TAIKHOAN = taikhoan,
+                        MATKHAU = matkhau,
+                        CMND_CCCD = int.Parse(cmnd),
+                        DIACHI = diachi,
+                        EMAIL = email,
+                        SDT = sdt,
+                        DAXOA=false
+                    };
+                    if (gioitinh == "0")
+                        NewNV.GIOITINH = false;
+                    else
+                        NewNV.GIOITINH = true;
+
+                    db.NHANVIENs.InsertOnSubmit(NewNV);
+                    db.SubmitChanges();
+                    TempData["Message"] = "Thêm thành công";
+                    return RedirectToAction("NhanVien", "CanBo");
+                }
+                else
+                {
+                    TempData["Message"] = "Mã nhân viên này đã tồn tại";
+                    return RedirectToAction("NhanVien", "CanBo");
+                }
+            }
+        }
+
+        [HttpGet]
+        public ActionResult ChiTietNhanVien(string manv)
+        {
+            List<SelectListItem> sex = new List<SelectListItem>
+            {
+                new SelectListItem{ Text="Nam", Value="1" },
+                new SelectListItem{ Text="Nữ", Value="0" }
+            };
+            ViewBag.GioiTinhList = sex;
+            return View(db.NHANVIENs.FirstOrDefault(x => x.MANV == manv));
+        }
+
+        [HttpPost]
+        public ActionResult SuaNhanVien(FormCollection Data)
+        {
+            var id = Data["ID"];
+            var manv = Data["MANV"];
+            var taikhoan = Data["TaiKhoan"];
+            var matkhau = Data["MatKhau"];
+            var tennv = Data["TenNV"];
+            var gioitinh = Data["GioiTinh"];
+            var cmnd = Data["CMND"];
+            var diachi = Data["DiaChi"];
+            var email = Data["Email"];
+            var sdt = Data["SDT"];
+
+            bool hasError = false;
+
+            if (String.IsNullOrEmpty(manv))
+            {
+                TempData["Message"] = "Mã nhân viên không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(taikhoan))
+            {
+                TempData["Message"] = "Tài khoản không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(matkhau))
+            {
+                TempData["Message"] = "Mật khẩu không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(tennv))
+            {
+                TempData["Message"] = "Tên nhân viên không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(gioitinh))
+            {
+                TempData["Message"] = "Giới tính không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(cmnd))
+            {
+                TempData["Message"] = "CMND_CCCD không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(diachi))
+            {
+                TempData["Message"] = "Địa chỉ không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(email))
+            {
+                TempData["Message"] = "Email không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(sdt))
+            {
+                TempData["Message"] = "Số điện thoại không được bỏ trống";
+                hasError = true;
+            }
+
+            if (hasError)
+                return RedirectToAction("NhanVien", "CanBo");
+            else
+            {
+                Models.NHANVIEN hasNV = db.NHANVIENs.FirstOrDefault(x => x.ID_NHANVIEN == int.Parse(id));
+                if (hasNV != null)
+                {
+                    hasNV.MANV = manv;
+                    hasNV.TENNV = tennv;
+                    hasNV.TAIKHOAN = taikhoan;
+                    hasNV.MATKHAU = matkhau;
+                      hasNV.CMND_CCCD = int.Parse(cmnd);
+                    hasNV.DIACHI = diachi;
+                    hasNV.EMAIL = email;
+                    hasNV.SDT = sdt;
+                    if (gioitinh == "0")
+                        hasNV.GIOITINH = false;
+                    else
+                        hasNV.GIOITINH = true;
+
+                    db.SubmitChanges();
+                    TempData["Message"] = "Sửa thành công";
+                    return RedirectToAction("NhanVien", "CanBo");
+                }
+                else
+                {
+                    TempData["Message"] = "Mã nhân viên này không tìm thấy";
+                    return RedirectToAction("NhanVien", "CanBo");
+                }
+            }
+        }
+        [HttpGet]
         public ActionResult DayPhong()
         {
             return View(db.VIEW_DayPhongs);
         }
 
+        [HttpPost]
+        public ActionResult ThemDayPhong(FormCollection Data)
+        {
+            var madayphong = Data["MaDayPhong"];
+
+            bool hasError = false;
+            if (String.IsNullOrEmpty(madayphong))
+            {
+                TempData["Message"] = "Mã dãy phòng không được bỏ trống";
+                hasError = true;
+            }
+
+            if (hasError)
+                return RedirectToAction("DayPhong", "CanBo");
+            else
+            {
+                Models.DAYPHONG hasDP = db.DAYPHONGs.FirstOrDefault(x => x.MADAYPHONG == madayphong);
+                if (hasDP == null)
+                {
+                    Models.DAYPHONG NewDP = new Models.DAYPHONG
+                    {
+                        MADAYPHONG = madayphong,
+                        DAXOA = false
+                    };
+                    db.DAYPHONGs.InsertOnSubmit(NewDP);
+                    db.SubmitChanges();
+                    TempData["Message"] = "Thêm thành công";
+                    return RedirectToAction("DayPhong", "CanBo");
+                }
+                else
+                {
+                    TempData["Message"] = "Mã dãy phòng đã tồn tại";
+                    return RedirectToAction("DayPhong", "CanBo");
+                }
+            }
+        }
+
+        [HttpGet]
         public ActionResult Phong()
         {
+            ViewBag.ID_DAY = new SelectList(db.DAYPHONGs, "MaDayPhong", "MaDayPhong");
             return View(db.VIEW_Phongs);
+        }
+
+        [HttpPost]
+        public ActionResult ThemPhong(FormCollection Data)
+        {
+            var madayphong = Data["MaDayPhong"];
+            var maphong = Data["MaPhong"];
+            var taikhoan = Data["TaiKhoan"];
+            var matkhau = Data["MatKhau"];
+            var soluongsinhvien = Data["SLSV"];
+            var dongia = Data["DonGia"];
+            var tinhtrang = Data["TinhTrang"];
+            var motakhac = Data["MoTaKhac"];
+
+            bool hasError = false;
+            if (String.IsNullOrEmpty(madayphong))
+            {
+                TempData["Message"] = "Mã dãy phòng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(maphong))
+            {
+                TempData["Message"] = "Mã phòng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(taikhoan))
+            {
+                TempData["Message"] = "Tài khoản không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(matkhau))
+            {
+                TempData["Message"] = "Mật khẩu không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(soluongsinhvien))
+            {
+                TempData["Message"] = "Số lượng sinh viên không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(dongia))
+            {
+                TempData["Message"] = "Đơn giá phòng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(tinhtrang))
+            {
+                TempData["Message"] = "Tình trạng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(motakhac))
+            {
+                TempData["Message"] = "Mô tả khác không được bỏ trống";
+                hasError = true;
+            }
+
+            if (hasError)
+                return RedirectToAction("Phong", "CanBo");
+            else
+            {
+                Models.DAYPHONG hasDP = db.DAYPHONGs.FirstOrDefault(x => x.MADAYPHONG == madayphong);
+                if (hasDP != null)
+                {
+                    Models.PHONG hasPhong = db.PHONGs.FirstOrDefault(x => x.MAPHONG == maphong && x.ID_DAY == hasDP.ID_DAY);
+                    if (hasPhong == null)
+                    {
+                        Models.PHONG NewPhong = new Models.PHONG
+                        {
+                            ID_DAY = hasDP.ID_DAY,
+                            MAPHONG = maphong,
+                            TAIKHOAN = taikhoan,
+                            MATKHAU = matkhau,
+                            SOLUONGSV = int.Parse(soluongsinhvien),
+                            DONGIA = int.Parse(dongia),
+                            TINHTRANG = tinhtrang,
+                            MOTAKHAC = motakhac,
+                            TRANGTHAI = false,
+                            DAXOA = false
+                        };
+
+                        db.PHONGs.InsertOnSubmit(NewPhong);
+                        db.SubmitChanges();
+                        TempData["Message"] = "Thêm thành công";
+                        return RedirectToAction("Phong", "CanBo");
+                    }
+                    else
+                    {
+                        TempData["Message"] = "Mã phòng đã tồn tại";
+                        return RedirectToAction("Phong", "CanBo");
+                    }
+                }
+                else
+                {
+                    TempData["Message"] = "Mã dãy phòng không tồn tại";
+                    return RedirectToAction("Phong", "CanBo");
+                }
+            }
+        }
+
+        [HttpGet]
+        public ActionResult ThongTinPhong(string maphong)
+        {
+            ViewBag.ID_DAY = new SelectList(db.DAYPHONGs, "MaDayPhong", "MaDayPhong");
+            var ThongTinPhong = db.PHONGs.FirstOrDefault(x => x.MAPHONG == maphong);
+            Models.DAYPHONG dayphong = db.DAYPHONGs.FirstOrDefault(x => x.ID_DAY == ThongTinPhong.ID_DAY);
+            ViewBag.ThongTinDayPhong = dayphong.MADAYPHONG;
+            return View(ThongTinPhong);
+        }
+
+        [HttpPost]
+        public ActionResult SuaThongTinPhong(FormCollection Data)
+        {
+            var idphong = Data["ID_PHONG"];
+            var madayphong = Data["MaDayPhong"];
+            var Maphong = Data["MaPhong"];
+            var taikhoan = Data["TaiKhoan"];
+            var matkhau = Data["MatKhau"];
+            var soluongsinhvien = Data["SLSV"];
+            var dongia = Data["DonGia"];
+            var tinhtrang = Data["TinhTrang"];
+            var motakhac = Data["MoTaKhac"];
+            bool trangthai;
+            if (Data["TrangThai"] == "true")
+            {
+                trangthai = true;
+            }
+            else
+            {
+                trangthai = false;
+            }
+
+            bool hasError = false;
+            if (String.IsNullOrEmpty(madayphong))
+            {
+                TempData["Message"] = "Mã dãy phòng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(Maphong))
+            {
+                TempData["Message"] = "Mã phòng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(taikhoan))
+            {
+                TempData["Message"] = "Tài khoản không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(matkhau))
+            {
+                TempData["Message"] = "Mật khẩu không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(soluongsinhvien))
+            {
+                TempData["Message"] = "Số lượng sinh viên không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(dongia))
+            {
+                TempData["Message"] = "Đơn giá phòng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(tinhtrang))
+            {
+                TempData["Message"] = "Tình trạng không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(motakhac))
+            {
+                TempData["Message"] = "Mô tả khác không được bỏ trống";
+                hasError = true;
+            }
+
+            if (hasError)
+                return RedirectToAction("Phong", "CanBo");
+            else
+            {
+                Models.DAYPHONG hasDP = db.DAYPHONGs.FirstOrDefault(x => x.MADAYPHONG == madayphong);
+                {
+                    if (hasDP != null)
+                    {
+                        Models.PHONG hasPhong = db.PHONGs.FirstOrDefault(x => x.ID_PHONG == int.Parse(idphong));
+                        if (hasPhong != null)
+                        {
+                            hasPhong.ID_DAY=hasDP.ID_DAY;
+                            hasPhong.MAPHONG = Maphong;
+                            hasPhong.TAIKHOAN = taikhoan;
+                            hasPhong.MATKHAU = matkhau;
+                            hasPhong.SOLUONGSV = int.Parse(soluongsinhvien);
+                            hasPhong.DONGIA = int.Parse(dongia);
+                            hasPhong.TINHTRANG = tinhtrang;
+                            hasPhong.MOTAKHAC = motakhac;
+                            hasPhong.DAXOA = false;
+                            hasPhong.TRANGTHAI = trangthai;
+
+                            db.SubmitChanges();
+                            TempData["Message"] = "Sửa thành công";
+                            return RedirectToAction("Phong", "CanBo");
+                        }
+                        else
+                        {
+                            TempData["Message"] = "Mã phòng không tồn tại";
+                            return RedirectToAction("Phong", "CanBo");
+                        }
+                    }
+                    else
+                    {
+                        TempData["Message"] = "Mã dãy phòng không tồn tại";
+                        return RedirectToAction("Phong", "CanBo");
+                    }
+                }
+            }
         }
 
         public ActionResult DonGia()
@@ -224,11 +686,11 @@ namespace DoAnDBMS.Controllers
         }
 
         [HttpPost]
-        public ActionResult ThemDonGia(FormCollection Data)
+        public ActionResult ThemDonGia(FormCollection Data, Models.DONGIA NewDG)
         {
             var madongia = Data["MaDonGia"];
-            var dongiadien = int.Parse(Data["DonGiaDien"]);
-            var dongianuoc = int.Parse(Data["DonGiaNuoc"]);
+            var dongiadien = Data["DonGiaDien"];
+            var dongianuoc = Data["DonGiaNuoc"];
             var ngayapdung = Data["NgayApDung"];
 
             DateTime Chuanhoa_ngayapdung;
@@ -239,18 +701,18 @@ namespace DoAnDBMS.Controllers
             }
 
             bool hasError = false;
-            
-            if(String.IsNullOrEmpty(madongia))
+
+            if (String.IsNullOrEmpty(madongia))
             {
                 TempData["Message"] = "Mã đơn giá không được bỏ trống";
                 hasError = true;
             }
-            if (String.IsNullOrEmpty(dongiadien.ToString()))
+            if (String.IsNullOrEmpty(dongiadien))
             {
                 TempData["Message"] = "Đơn giá điện không được bỏ trống";
                 hasError = true;
             }
-            if (String.IsNullOrEmpty(dongianuoc.ToString()))
+            if (String.IsNullOrEmpty(dongianuoc))
             {
                 TempData["Message"] = "Đơn giá nước không được bỏ trống";
                 hasError = true;
@@ -260,14 +722,130 @@ namespace DoAnDBMS.Controllers
                 return RedirectToAction("DonGia", "CanBo");
             else
             {
+                NewDG.MADONGIA = madongia;
+                NewDG.DONGIADIEN = int.Parse(dongiadien);
+                NewDG.DONGIANUOC = int.Parse(dongianuoc);
+                NewDG.NGAYAPDUNG = Chuanhoa_ngayapdung;
+                NewDG.DAXOA = false;
+
                 Models.DONGIA hasDG = db.DONGIAs.FirstOrDefault(x => x.MADONGIA == madongia);
-                // Thêm đơn giá
+                if (hasDG == null)
+                {
+                    db.DONGIAs.InsertOnSubmit(NewDG);
+                    db.SubmitChanges();
+                    return RedirectToAction("DonGia", "CanBo");
+                }
+                else
+                {
+                    TempData["Message"] = "Mã đơn giá này đã tồn tại";
+                    return RedirectToAction("DonGia", "CanBo");
+                }
+            }
+        }
+
+        [HttpGet]
+        public ActionResult ChinhSuaDonGia(string madongia)
+        {
+            return View(db.DONGIAs.FirstOrDefault(x => x.MADONGIA == madongia));
+        }
+
+        [HttpPost]
+        public ActionResult ChinhSuaDonGia(FormCollection Data)
+        {
+            var id = Data["ID"];
+            var madongia = Data["MaDonGia"];
+            var dongiadien = Data["DonGiaDien"];
+            var dongianuoc = Data["DonGiaNuoc"];
+            var ngayapdung = Data["NgayApDung"];
+            bool apdung;
+            if (Data["ApDung"] == "true")
+            {
+                apdung = true;
+            }
+            else
+            {
+                apdung = false;
+            }
+
+
+            DateTime Chuanhoa_ngayapdung;
+            if (!DateTime.TryParse(ngayapdung, out Chuanhoa_ngayapdung))
+            {
+                TempData["Message"] = "Ngày áp dụng không hợp lệ";
+                return RedirectToAction("DonGia", "CanBo");
+            }
+
+            bool hasError = false;
+
+            if (String.IsNullOrEmpty(madongia))
+            {
+                TempData["Message"] = "Mã đơn giá không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(dongiadien))
+            {
+                TempData["Message"] = "Đơn giá điện không được bỏ trống";
+                hasError = true;
+            }
+            if (String.IsNullOrEmpty(dongianuoc))
+            {
+                TempData["Message"] = "Đơn giá nước không được bỏ trống";
+                hasError = true;
+            }
+            if (apdung == true)
+            {
+                Models.DONGIA hasDG_DangApDung = db.DONGIAs.FirstOrDefault(x => x.TRANGTHAI == true);
+                if (hasDG_DangApDung != null)
+                {
+                    TempData["Message"] = "Đã có đơn giá khác đang áp dụng";
+                    hasError = true;
+                }
+            }
+
+            if (hasError)
+                return RedirectToAction("DonGia", "CanBo");
+            else
+            {
+                Models.DONGIA hasDG = db.DONGIAs.FirstOrDefault(x => x.ID_DONGIA == int.Parse(id));
+                if (hasDG != null)
+                {
+                    hasDG.MADONGIA = madongia;
+                    hasDG.DONGIADIEN = int.Parse(dongiadien);
+                    hasDG.DONGIANUOC = int.Parse(dongianuoc);
+                    hasDG.NGAYAPDUNG = Chuanhoa_ngayapdung;
+                    hasDG.TRANGTHAI = apdung;
+                    hasDG.DAXOA = false;
+
+                    db.SubmitChanges();
+                    return RedirectToAction("DonGia", "CanBo");
+                }
+                else
+                {
+                    TempData["Message"] = "Mã đơn giá này đã tồn tại";
+                    return RedirectToAction("DonGia", "CanBo");
+                }
             }
         }
 
         public ActionResult HoTro()
         {
             return View(db.VIEW_HOTROs);
+        }
+
+        public ActionResult ChinhSuaHotro(int idhotro)
+        {
+            Models.HOTRO hasHT = db.HOTROs.FirstOrDefault(x => x.ID_HOTRO == idhotro);
+            if (hasHT!=null)
+            {
+                hasHT.TRANGTHAI = true;
+                db.SubmitChanges();
+                return RedirectToAction("HoTro", "CanBo");
+            }
+            else
+            {
+                TempData["Message"] = "Không tìm thấy hỗ trợ";
+                return RedirectToAction("HoTro", "CanBo");
+            }
         }
 
         public ActionResult HoaDonDienNuoc()

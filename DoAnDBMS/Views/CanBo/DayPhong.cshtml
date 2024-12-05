@@ -23,7 +23,7 @@
         }
         <p class="text-right">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới
+                Thêm mới dãy phòng
             </button>
         </p>
         <hr />
@@ -52,21 +52,19 @@
             </div>
             <div class="modal-body">
                 <!-- Form Thêm mới -->
-                @using (Html.BeginForm("ThemHoaDon", "HoaDonPhong", FormMethod.Post, new { @class = "form" }))
+                @using (Html.BeginForm("ThemDayPhong", "CanBo", FormMethod.Post, new { @class = "form" }))
                 {
                     <div class="mb-3">
-                        <label for="MaPhong" class="form-label">Mã phòng</label>
-                        <input type="text" class="form-control" id="MaPhong" name="MaPhong" required />
+                        <label for="MaPhong" class="form-label">Mã dãy phòng</label>
+                        @Html.TextBox("MaDayPhong", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập mã dãy phòng"
+                   })
+
                     </div>
-                    <div class="mb-3">
-                        <label for="NgayTao" class="form-label">Ngày tạo</label>
-                        <input type="date" class="form-control" id="NgayTao" name="NgayTao" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="ThanhTien" class="form-label">Thành tiền</label>
-                        <input type="number" class="form-control" id="ThanhTien" name="ThanhTien" required />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-center">Xác nhận</button>
                 }
             </div>
         </div>

@@ -1,0 +1,68 @@
+﻿@model DoAnDBMS.Models.DONGIA
+@{
+    ViewBag.Title = "ChinhSuaDonGia";
+    Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+}
+
+<style>
+    .text-right {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Chỉnh sửa đơn giá</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
+        <hr />
+        @using (Html.BeginForm("ChinhSuaDonGia", "CanBo", FormMethod.Post, new { @class = "form" }))
+        {
+            @Html.Hidden("ID", Model.ID_DONGIA)
+            <label class="form-label">Mã đơn giá</label>
+            <div>
+                @Html.TextBox("MaDonGia", Model.MADONGIA, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập Mã đơn giá"
+           })
+            </div>
+
+            <label class="form-label">Đơn giá điện</label>
+            <div>
+                @Html.TextBox("DonGiaDien", Model.DONGIADIEN, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập đơn giá điện"
+           })
+            </div>
+
+            <label class="form-label">Đơn giá nước</label>
+            <div>
+                @Html.TextBox("DonGiaNuoc", Model.DONGIANUOC, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập đơn giá nước"
+           })
+            </div>
+
+            <label class="form-label">Ngày áp dụng</label>
+            <div>
+                <input type="date" name="NgayApDung" value="@(Model.NGAYAPDUNG != null ? Model.NGAYAPDUNG.Value.ToString("yyyy-MM-dd") : "")" class="form-control" />
+            </div>
+
+            <label class="form-label">Áp dụng</label>
+            <input type="checkbox" name="ApDung" value="true" />
+
+            <br />
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+        }
+    </div>
+</div>
+
+

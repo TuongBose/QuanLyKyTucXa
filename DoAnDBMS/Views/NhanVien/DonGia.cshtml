@@ -21,11 +21,6 @@
                 @TempData["Message"]
             </div>
         }
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới
-            </button>
-        </p>
         <hr />
         <table class="table table-bordered table-striped table-hover">
             <tr class="table table-dark">
@@ -53,7 +48,7 @@
                     }
                     else
                     {
-                        <td>Chua áp dụng</td>
+                        <td>Chưa áp dụng</td>
                     }
                     <td>
                         @DateTime.Parse(item.NGAYAPDUNG.ToString()).ToShortDateString()

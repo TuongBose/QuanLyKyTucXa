@@ -270,6 +270,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\CanBo\ChinhSuaCanBo.cshtml" />
     <Content Include="Views\NhanVien\ThemChiSoDienNuocCongTo.cshtml" />
+    <Content Include="Views\CanBo\ChinhSuaDonGia.cshtml" />
+    <Content Include="Views\CanBo\ThongTinPhong.cshtml" />
+    <Content Include="Views\CanBo\ChiTietNhanVien.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -38,6 +38,7 @@
                 <th>Đơn giá nước</th>
                 <th>Trạng Thái</th>
                 <th>Ngày áp dụng</th>
+                <th></th>
             </tr>
             @foreach (var item in Model)
             {
@@ -57,11 +58,18 @@
                     }
                     else
                     {
-                        <td>Chua áp dụng</td>
+                        <td>Chưa áp dụng</td>
                     }
                     <td>
                         @DateTime.Parse(item.NGAYAPDUNG.ToString()).ToShortDateString()
                     </td>
+                    @if (TaiKhoan.QUANTRI == true)
+                    {
+                    <td>
+                        <a href="@Url.Action("ChinhSuaDonGia", "CanBo", new { @madongia = item.MADONGIA }, null)" class="btn btn-primary">Sửa</a>
+                        <a href="#" class="btn btn-danger">Xóa</a>
+                    </td>
+                    }
                 </tr>
             }
         </table>
@@ -109,10 +117,11 @@
 
                     <label class="form-label">Ngày áp dụng</label>
                     <div>
-                        <input type="date" name="NgayApDung" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
+                        <input type="date" name="NgayApDung" class="form-control" />
                     </div>
+
                     <br />
-                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <button type="submit" class="btn btn-primary">Xác nhận</button>
                 }
             </div>
         </div>

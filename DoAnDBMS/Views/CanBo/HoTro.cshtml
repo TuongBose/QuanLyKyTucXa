@@ -21,11 +21,6 @@
                 @TempData["Message"]
             </div>
         }
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới
-            </button>
-        </p>
         <hr />
         <table class="table table-bordered table-striped table-hover">
             <tr class="table table-dark">
@@ -41,6 +36,7 @@
                 <th>
                     Trạng thái
                 </th>
+                <th></th>
             </tr>
 
             @foreach (var item in Model)
@@ -65,6 +61,9 @@
                     {
                         <td>
                             Chưa xử lý
+                        </td>
+                        <td>
+                            <a href="@Url.Action("ChinhSuaHoTro", "CanBo", new { @idhotro = item.ID_HOTRO }, null)" class="btn btn-primary">Đã hỗ trợ</a>
                         </td>
                     }
                 </tr>

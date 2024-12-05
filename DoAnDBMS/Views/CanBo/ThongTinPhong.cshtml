@@ -1,7 +1,6 @@
-﻿@model IEnumerable<DoAnDBMS.Models.VIEW_Phong>
-
+﻿@model DoAnDBMS.Models.PHONG
 @{
-    ViewBag.Title = "Phong";
+    ViewBag.Title = "ThongTinPhong";
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
 }
 
@@ -13,25 +12,17 @@
 
 <div class="content">
     <div class="card shadow p-4">
-        <h1 class="text-center">Phòng</h1>
+        <h1 class="text-center">Thông tin phòng @Model.MAPHONG</h1>
         <br />
-        @if (TempData["Message"] != null)
-        {
-            <div class="alert alert-danger">
-                @TempData["Message"]
-            </div>
-        }
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới phòng
-            </button>
-        </p>
         <hr />
         <table class="table table-bordered table-striped table-hover">
             <tr class="table table-dark">
+                <th>ID_DAY</th>
                 <th>Dãy phòng</th>
+                <th>ID_PHONG</th>
                 <th>Mã Phòng</th>
                 <th>Tài khoản</th>
+                <th>Mật khẩu</th>
                 <th>Số lượng</th>
                 <th>Đơn giá</th>
                 <th>Mô tả khác</th>
@@ -39,29 +30,31 @@
                 <th>Trạng thái</th>
                 <th></th>
             </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.ID_DAY</td>
-                    <td>@item.MAPHONG</td>
-                    <td>@item.TAIKHOAN</td>
-                    <td>@item.SOLUONGSV</td>
-                    <td>@item.DONGIA</td>
-                    <td>@item.MOTAKHAC</td>
-                    <td>@item.TINHTRANG</td>
-                    @if (item.TRANGTHAI == true)
-                    {
-                        <td>Có người ở</td>
-                    }
-                    else
-                    {
-                        <td>Không có người ở</td>
-                    }
-                    <td>
-                        <a href="@Url.Action("ThongTinPhong", "CanBo", new { @maphong = item.MAPHONG }, null)" class="btn btn-primary">Chi Tiết</a>
-                    </td>
-                </tr>
-            }
+            <tr>
+                <td>@Model.ID_DAY</td>
+                <td>@ViewBag.ThongTinDayPhong</td>
+                <td>@Model.ID_PHONG</td>
+                <td>@Model.MAPHONG</td>
+                <td>@Model.TAIKHOAN</td>
+                <td>@Model.MATKHAU</td>
+                <td>@Model.SOLUONGSV</td>
+                <td>@Model.DONGIA</td>
+                <td>@Model.MOTAKHAC</td>
+                <td>@Model.TINHTRANG</td>
+                @if (Model.TRANGTHAI == true)
+                {
+                    <td>Có người ở</td>
+                }
+                else
+                {
+                    <td>Không có người ở</td>
+                }
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                        Sửa thông tin phòng
+                    </button>
+                </td>
+            </tr>
         </table>
     </div>
 </div>
@@ -76,8 +69,9 @@
             </div>
             <div class="modal-body">
                 <!-- Form Thêm mới -->
-                @using (Html.BeginForm("ThemPhong", "CanBo", FormMethod.Post, new { @class = "form" }))
+                @using (Html.BeginForm("SuaThongTinPhong", "CanBo", FormMethod.Post, new { @class = "form" }))
                 {
+                    @Html.Hidden("ID_PHONG", Model.ID_PHONG)
                     <label class="form-label">Mã dãy phòng</label>
                     <div>
                         @Html.DropDownList("MaDayPhong", ViewBag.ID_DAY as SelectList, "Chọn dãy phòng", new
@@ -89,7 +83,7 @@
 
                     <label class="form-label">Mã phòng</label>
                     <div>
-                        @Html.TextBox("MaPhong", "", new
+                        @Html.TextBox("MaPhong", Model.MAPHONG, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập mã phòng"
@@ -98,7 +92,7 @@
 
                     <label class="form-label">Tài Khoản</label>
                     <div>
-                        @Html.TextBox("TaiKhoan", "", new
+                        @Html.TextBox("TaiKhoan", Model.TAIKHOAN, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập tài khoản"
@@ -107,7 +101,7 @@
 
                     <label class="form-label">Mật khẩu</label>
                     <div>
-                        @Html.TextBox("MatKhau", "", new
+                        @Html.TextBox("MatKhau", Model.MATKHAU, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập mật khẩu"
@@ -116,7 +110,7 @@
 
                     <label class="form-label">Số lượng sinh viên</label>
                     <div>
-                        @Html.TextBox("SLSV", "", new
+                        @Html.TextBox("SLSV", Model.SOLUONGSV, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập số lượng sinh viên"
@@ -125,7 +119,7 @@
 
                     <label class="form-label">Đơn giá</label>
                     <div>
-                        @Html.TextBox("DonGia", "", new
+                        @Html.TextBox("DonGia", Model.DONGIA, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập đơn giá"
@@ -134,7 +128,7 @@
 
                     <label class="form-label">Tình trạng</label>
                     <div>
-                        @Html.TextBox("TinhTrang", "", new
+                        @Html.TextBox("TinhTrang", Model.TINHTRANG, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập tình trạng hiện tại của phòng"
@@ -143,12 +137,16 @@
 
                     <label class="form-label">Mô tả khác</label>
                     <div>
-                        @Html.TextBox("MoTaKhac", "", new
+                        @Html.TextBox("MoTaKhac", Model.MOTAKHAC, new
                    {
                        @class = "form-control",
                        @placeholder = "Nhập mô tả khác của phòng"
                    })
                     </div>
+
+                    <label class="form-label">Có người ở</label>
+                    <input type="checkbox" name="TrangThai" value="true" />
+
                     <br />
                     <button type="submit" class="btn btn-primary">Xác nhận</button>
                 }
