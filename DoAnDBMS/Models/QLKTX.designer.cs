@@ -254,6 +254,29 @@ namespace DoAnDBMS.Models
 				return this.GetTable<VIEW_HOADONPHONG>();
 			}
 		}
+		
+		public System.Data.Linq.Table<VIEW_SINHVIEN> VIEW_SINHVIENs
+		{
+			get
+			{
+				return this.GetTable<VIEW_SINHVIEN>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VIEW_THANNHAN> VIEW_THANNHANs
+		{
+			get
+			{
+				return this.GetTable<VIEW_THANNHAN>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PROC_THEMTHANNHAN")]
+		public int PROC_THEMTHANNHAN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MASV", DbType="Char(5)")] string mASV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENTN", DbType="NVarChar(40)")] string tENTN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SDT", DbType="NVarChar(15)")] string sDT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QUANHE", DbType="NVarChar(30)")] string qUANHE)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mASV, tENTN, sDT, qUANHE);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CANBO")]
@@ -4869,6 +4892,294 @@ namespace DoAnDBMS.Models
 				if ((this._TRANGTHAI != value))
 				{
 					this._TRANGTHAI = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VIEW_SINHVIEN")]
+	public partial class VIEW_SINHVIEN
+	{
+		
+		private string _MASV;
+		
+		private string _MAPHONG;
+		
+		private string _TENSV;
+		
+		private System.Nullable<bool> _GIOITINH;
+		
+		private System.Nullable<int> _CMND_CCCD;
+		
+		private string _EMAIL;
+		
+		private string _SDT;
+		
+		private System.Nullable<System.DateTime> _NGAYLAMHOPDONG;
+		
+		public VIEW_SINHVIEN()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASV", DbType="Char(5) NOT NULL", CanBeNull=false)]
+		public string MASV
+		{
+			get
+			{
+				return this._MASV;
+			}
+			set
+			{
+				if ((this._MASV != value))
+				{
+					this._MASV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="Char(5) NOT NULL", CanBeNull=false)]
+		public string MAPHONG
+		{
+			get
+			{
+				return this._MAPHONG;
+			}
+			set
+			{
+				if ((this._MAPHONG != value))
+				{
+					this._MAPHONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENSV", DbType="NVarChar(40)")]
+		public string TENSV
+		{
+			get
+			{
+				return this._TENSV;
+			}
+			set
+			{
+				if ((this._TENSV != value))
+				{
+					this._TENSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIOITINH", DbType="Bit")]
+		public System.Nullable<bool> GIOITINH
+		{
+			get
+			{
+				return this._GIOITINH;
+			}
+			set
+			{
+				if ((this._GIOITINH != value))
+				{
+					this._GIOITINH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND_CCCD", DbType="Int")]
+		public System.Nullable<int> CMND_CCCD
+		{
+			get
+			{
+				return this._CMND_CCCD;
+			}
+			set
+			{
+				if ((this._CMND_CCCD != value))
+				{
+					this._CMND_CCCD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(40)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this._EMAIL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NVarChar(15)")]
+		public string SDT
+		{
+			get
+			{
+				return this._SDT;
+			}
+			set
+			{
+				if ((this._SDT != value))
+				{
+					this._SDT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYLAMHOPDONG", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYLAMHOPDONG
+		{
+			get
+			{
+				return this._NGAYLAMHOPDONG;
+			}
+			set
+			{
+				if ((this._NGAYLAMHOPDONG != value))
+				{
+					this._NGAYLAMHOPDONG = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VIEW_THANNHAN")]
+	public partial class VIEW_THANNHAN
+	{
+		
+		private string _TENTN;
+		
+		private string _SDT_THANNHAN;
+		
+		private string _QUANHE;
+		
+		private string _MASV;
+		
+		private string _TENSV;
+		
+		private string _SDT_SINHVIEN;
+		
+		private System.Nullable<System.DateTime> _NGAYLAMHOPDONG;
+		
+		public VIEW_THANNHAN()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTN", DbType="NVarChar(40)")]
+		public string TENTN
+		{
+			get
+			{
+				return this._TENTN;
+			}
+			set
+			{
+				if ((this._TENTN != value))
+				{
+					this._TENTN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT_THANNHAN", DbType="NVarChar(15)")]
+		public string SDT_THANNHAN
+		{
+			get
+			{
+				return this._SDT_THANNHAN;
+			}
+			set
+			{
+				if ((this._SDT_THANNHAN != value))
+				{
+					this._SDT_THANNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUANHE", DbType="NVarChar(30)")]
+		public string QUANHE
+		{
+			get
+			{
+				return this._QUANHE;
+			}
+			set
+			{
+				if ((this._QUANHE != value))
+				{
+					this._QUANHE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASV", DbType="Char(5) NOT NULL", CanBeNull=false)]
+		public string MASV
+		{
+			get
+			{
+				return this._MASV;
+			}
+			set
+			{
+				if ((this._MASV != value))
+				{
+					this._MASV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENSV", DbType="NVarChar(40)")]
+		public string TENSV
+		{
+			get
+			{
+				return this._TENSV;
+			}
+			set
+			{
+				if ((this._TENSV != value))
+				{
+					this._TENSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT_SINHVIEN", DbType="NVarChar(15)")]
+		public string SDT_SINHVIEN
+		{
+			get
+			{
+				return this._SDT_SINHVIEN;
+			}
+			set
+			{
+				if ((this._SDT_SINHVIEN != value))
+				{
+					this._SDT_SINHVIEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYLAMHOPDONG", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYLAMHOPDONG
+		{
+			get
+			{
+				return this._NGAYLAMHOPDONG;
+			}
+			set
+			{
+				if ((this._NGAYLAMHOPDONG != value))
+				{
+					this._NGAYLAMHOPDONG = value;
 				}
 			}
 		}

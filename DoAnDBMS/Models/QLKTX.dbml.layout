@@ -88,14 +88,14 @@
         <classShapeMoniker Id="0a7283a0-7900-4b16-8fbf-d0fac1c0e029" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 1.40625); (10.90625 : 1.40625); (10.90625 : 8.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 1.40625); (10.90625 : 1.40625); (10.90625 : 8.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLKTXDataContext/DONGIA/DONGIA_HOADON_DIENNUOC" />
       <nodes>
         <classShapeMoniker Id="a5b0e84d-d760-4ffd-aa35-832f0c214ffb" />
         <classShapeMoniker Id="0a7283a0-7900-4b16-8fbf-d0fac1c0e029" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 1.7656275); (11.15625 : 1.7656275); (11.15625 : 12)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 1.7656275); (10.8229166666667 : 1.7656275 : JumpStart); (10.9895833333333 : 1.7656275 : JumpEnd); (11.15625 : 1.7656275); (11.15625 : 12)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLKTXDataContext/DONGIA/DONGIA_HOADON_PHONG" />
       <nodes>
         <classShapeMoniker Id="a5b0e84d-d760-4ffd-aa35-832f0c214ffb" />
@@ -204,6 +204,18 @@
       <DataClassMoniker Name="/QLKTXDataContext/VIEW_HOADONPHONG" />
       <nestedChildShapes>
         <elementListCompartment Id="d181ee9c-3918-44c3-951c-e6de8addc45a" absoluteBounds="21.14, 1.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="037aa9d7-7abb-4298-a594-25f80725b346" absoluteBounds="14.875, 1.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/QLKTXDataContext/VIEW_SINHVIEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5276db47-0e52-4c1c-8ccc-c20be7dfcaaf" absoluteBounds="14.89, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab82d684-8b56-4399-9923-95bb278077ca" absoluteBounds="14.875, 5.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QLKTXDataContext/VIEW_THANNHAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30ae8e06-6e0d-4832-9892-c661cd3026a7" absoluteBounds="14.89, 6.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

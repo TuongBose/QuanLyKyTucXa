@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "HoaDonPhong";
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+    DoAnDBMS.Models.CANBO TaiKhoan = Session["Account"] as DoAnDBMS.Models.CANBO;
 }
 
 <style>
@@ -73,11 +74,13 @@
                     <td>@Html.DisplayFor(modelItem => item.THANHTIEN_DONGIAPHONG_HDDN)</td>
                     @if (item.TRANGTHAI == true)
                     {
-                        <td>Đã thu tiền</td>
+                        <td class="text-bg-success">Đã thu tiền</td>
                     }
                     else
                     {
-                        <td>Chưa thu tiền</td>
+                        <td class="text-bg-danger">Chưa thu tiền</td>
+                        if (TaiKhoan.QUANTRI == true)
+                        {
                         <td>
                             @using (Html.BeginForm("ChinhSua_HDP_HDDN", "CanBo"))
                             {
@@ -88,7 +91,8 @@
                                 <button class="btn btn-primary" type="submit">Xác nhận đã thu tiền</button>
                             }
                         </td>
-                    }
+                            }
+                        }
                 </tr>
             }
         </table>

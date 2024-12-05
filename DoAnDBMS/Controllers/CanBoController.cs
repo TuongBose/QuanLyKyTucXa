@@ -952,5 +952,15 @@ namespace DoAnDBMS.Controllers
             Session["Account"] = null;
             return RedirectToAction("DangNhap", "CanBo");
         }
+
+        public ActionResult SinhVien()
+        {
+            return View(db.VIEW_SINHVIENs);
+        }
+
+        public ActionResult ThanNhan()
+        {
+            return View(db.VIEW_THANNHANs);
+        }
     }
 }

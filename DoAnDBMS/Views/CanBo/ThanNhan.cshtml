@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_THANNHAN>
+@{
+    ViewBag.Title = "ThanNhan";
+    Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+}
+
+<style>
+    .text-right {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Thân nhân</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
+        <hr />
+        <table class="table table-bordered table-striped table-hover">
+            <tr class="table table-dark">
+                <th>Họ tên</th>
+                <th>Số điện thoại</th>
+                <th>Quan hệ</th>
+                <th>Tên sinh viên</th>
+                <th>MSSV</th>
+                <th>SDT sinh viên</th>
+                <th>Ngày làm hợp đồng</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TENTN</td>
+                    <td>@item.SDT_THANNHAN</td>
+                    <td>@item.QUANHE</td>
+                    <td>@item.TENSV</td>
+                    <td>@item.MASV</td>
+                    <td>@item.SDT_SINHVIEN</td>
+                    <td>@DateTime.Parse(item.NGAYLAMHOPDONG.ToString()).ToShortDateString()</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

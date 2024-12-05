@@ -1,0 +1,93 @@
+﻿@model DoAnDBMS.Models.SINHVIEN
+@{
+    ViewBag.Title = "SuaSinhVien";
+    Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
+}
+
+<style>
+    .text-right {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Sinh viên</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
+        <hr />
+        @using (Html.BeginForm("SuaSinhVien", "NhanVien", FormMethod.Post, new { @class = "form" }))
+        {
+            <label class="form-label">Mã sinh viên</label>
+            <div>
+                @Html.TextBox("MASV", Model.MASV, new
+           {
+               @class = "form-control",
+               @readonly="readonly"
+           })
+            </div>
+
+            <label class="form-label">Mã phòng</label>
+            <div>
+                @Html.DropDownList("MaPhong", ViewBag.ID_Phong as SelectList, "Chọn Mã phòng", new
+           {
+               @class = "form-control",
+               @placeholder = "Chọn mã phòng"
+           })
+            </div>
+
+            <label class="form-label">Tên sinh viên</label>
+            <div>
+                @Html.TextBox("TenSV", Model.TENSV, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập tên sinh viên"
+           })
+            </div>
+
+            <label class="form-label">Giới tính </label>
+            <div>
+                @Html.DropDownList("GioiTinh", ViewBag.GioiTinhList as List<SelectListItem>, "Chọn giới tính", new { @class = "form-control" })
+            </div>
+
+            <label class="form-label">CMND_CCCD</label>
+            <div>
+                @Html.TextBox("CMND", Model.CMND_CCCD, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập số CMND_CCCD"
+           })
+            </div>
+
+            <label class="form-label">Email</label>
+            <div>
+                @Html.TextBox("Email", Model.EMAIL, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập Email"
+           })
+            </div>
+
+            <label class="form-label">Số điện thoại</label>
+            <div>
+                @Html.TextBox("SDT", Model.SDT, new
+           {
+               @class = "form-control",
+               @placeholder = "Nhập số điện thoại"
+           })
+            </div>
+
+            <label class="form-label">Ngày làm hợp đồng</label>
+            <div>
+                <input type="date" name="NLHD" class="form-control" value="@(Model.NGAYLAMHOPDONG != null ? Model.NGAYLAMHOPDONG.Value.ToString("yyyy-MM-dd") : "")" />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+        }
+    </div>
+</div>

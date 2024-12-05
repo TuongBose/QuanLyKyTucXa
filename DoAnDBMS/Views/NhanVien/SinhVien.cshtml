@@ -1,0 +1,149 @@
+﻿@model IEnumerable<DoAnDBMS.Models.VIEW_SINHVIEN>
+@{
+    ViewBag.Title = "SinhVien";
+    Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
+}
+
+<style>
+    .text-right {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="content">
+    <div class="card shadow p-4">
+        <h1 class="text-center">Sinh viên</h1>
+        <br />
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Message"]
+            </div>
+        }
+        <p class="text-right">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                Thêm mới sinh viên
+            </button>
+        </p>
+        <hr />
+        <table class="table table-bordered table-striped table-hover">
+            <tr class="table table-dark">
+                <th>Mã sinh viên</th>
+                <th>Phòng</th>
+                <th>Tên sinh viên</th>
+                <th>Giới tính</th>
+                <th>CMND_CCCD</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Ngày làm hợp đồng</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MASV</td>
+                    <td>@item.MAPHONG</td>
+                    <td>@item.TENSV</td>
+                    @if (item.GIOITINH == true)
+                    {
+                        <td>Nam</td>
+                    }
+                    else
+                    {
+                        <td>Nữ</td>
+                    }
+                    <td>@item.CMND_CCCD</td>
+                    <td>@item.EMAIL</td>
+                    <td>@item.SDT</td>
+                    <td>@DateTime.Parse(item.NGAYLAMHOPDONG.ToString()).ToShortDateString()</td>
+                    <td>
+                        <a href="@Url.Action("SuaSinhVien", "NhanVien", new { @masv = item.MASV }, null)" class="btn btn-primary">Sửa</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<!-- Modal Thêm mới -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Thêm mới hóa đơn phòng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form Thêm mới -->
+                @using (Html.BeginForm("ThemSinhVien", "NhanVien", FormMethod.Post, new { @class = "form" }))
+                {
+                    <label class="form-label">Mã sinh viên</label>
+                    <div>
+                        @Html.TextBox("MASV", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập mã sinh viên"
+                   })
+                    </div>
+
+                    <label class="form-label">Mã phòng</label>
+                    <div>
+                        @Html.DropDownList("MaPhong", ViewBag.ID_Phong as SelectList, "Chọn Mã phòng", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Chọn mã phòng"
+                   })
+                    </div>
+
+                    <label class="form-label">Tên sinh viên</label>
+                    <div>
+                        @Html.TextBox("TenSV", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập tên sinh viên"
+                   })
+                    </div>
+
+                    <label class="form-label">Giới tính </label>
+                    <div>
+                        @Html.DropDownList("GioiTinh", ViewBag.GioiTinhList as List<SelectListItem>, "Chọn giới tính", new { @class = "form-control" })
+                    </div>
+
+                    <label class="form-label">CMND_CCCD</label>
+                    <div>
+                        @Html.TextBox("CMND", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập số CMND_CCCD"
+                   })
+                    </div>
+
+                    <label class="form-label">Email</label>
+                    <div>
+                        @Html.TextBox("Email", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập Email"
+                   })
+                    </div>
+
+                    <label class="form-label">Số điện thoại</label>
+                    <div>
+                        @Html.TextBox("SDT", "", new
+                   {
+                       @class = "form-control",
+                       @placeholder = "Nhập số điện thoại"
+                   })
+                    </div>
+
+                    <label class="form-label">Ngày làm hợp đồng</label>
+                    <div>
+                        <input type="date" name="NLHD" class="form-control" />
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

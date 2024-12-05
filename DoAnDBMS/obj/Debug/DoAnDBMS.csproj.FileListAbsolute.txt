@@ -72,8 +72,6 @@ D:\DBMS\DOAN_DBMS\Source\DoAnDBMS\obj\Debug\DoAnDBMS.dll
 D:\DBMS\DOAN_DBMS\Source\DoAnDBMS\obj\Debug\DoAnDBMS.pdb
 C:\Users\VanAnh\Desktop\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csprojResolveAssemblyReference.cache
 C:\Users\VanAnh\Desktop\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.dll
-D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csproj.AssemblyReference.cache
-D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csproj.CoreCompileInputs.cache
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\bin\DoAnDBMS.dll.config
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\bin\DoAnDBMS.dll
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\bin\DoAnDBMS.pdb
@@ -141,6 +139,8 @@ D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\bin\System.Web.Razor.xml
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\bin\System.Web.WebPages.xml
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\bin\System.Web.WebPages.Deployment.xml
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\bin\System.Web.WebPages.Razor.xml
+D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csproj.AssemblyReference.cache
+D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csproj.CoreCompileInputs.cache
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.csproj.Up2Date
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.dll
 D:\HocTap\DBMS\DoAn\QuanLyKyTucXa_Web\DoAnDBMS\obj\Debug\DoAnDBMS.pdb

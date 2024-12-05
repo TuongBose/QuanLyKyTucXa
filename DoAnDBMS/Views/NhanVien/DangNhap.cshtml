@@ -1,32 +1,47 @@
-﻿
-@{
-    ViewBag.Title = "DangNhap";
+﻿@{
+    ViewBag.Title = "Đăng nhập Nhân Viên";
     Layout = "~/Views/Share/LayoutPageNhanVien.cshtml";
 }
 
-<h2>Đăng nhập nhân viên</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h3>Đăng nhập Nhân Viên</h3>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="mb-3">
+                            @Html.TextBox("ID", "", new
+                            {
+                                @class = "form-control",
+                                @placeholder = "Nhập ID Nhân Viên"
+                            })
+                            <small class="text-danger">@ViewData["LoiID"]</small>
+                        </div>
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true)
-    {
-        <div>
-            @Html.TextBox("ID", "", new
-       {
-           @class = "form-control",
-           @placeholder = "Nhập ID Nhân viên"
-       }) @ViewData["LoiID"]
-</div>
-<div>
-    @Html.TextBox("Pass", "", new
-{
-   @class = "form-control",
-   @placeholder = "Nhập mật khẩu"
-}) @ViewData["LoiPass"]
-</div>
-}
-<div>@ViewBag.TB</div>
-<button type="submit">Đăng Nhập</button>
-}
+                        <div class="mb-3">
+                            @Html.Password("Pass", "", new
+                            {
+                                @class = "form-control",
+                                @placeholder = "Nhập mật khẩu"
+                            })
+                            <small class="text-danger">@ViewData["LoiPass"]</small>
+                        </div>
 
-<a href="@Url.Action("DangNhap","CanBo")">Cán Bộ</a>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success w-100">Đăng Nhập</button>
+                        </div>
+                    }
+                </div>
+                <div class="card-footer text-center">
+                    <a href="@Url.Action("DangNhap", "CanBo")" class="text-decoration-none">
+                        <small>Đăng nhập Cán Bộ</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

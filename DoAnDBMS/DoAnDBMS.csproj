@@ -273,6 +273,11 @@
     <Content Include="Views\CanBo\ChinhSuaDonGia.cshtml" />
     <Content Include="Views\CanBo\ThongTinPhong.cshtml" />
     <Content Include="Views\CanBo\ChiTietNhanVien.cshtml" />
+    <Content Include="Views\NhanVien\SinhVien.cshtml" />
+    <Content Include="Views\NhanVien\SuaSinhVien.cshtml" />
+    <Content Include="Views\NhanVien\ThanNhan.cshtml" />
+    <Content Include="Views\CanBo\SinhVien.cshtml" />
+    <Content Include="Views\CanBo\ThanNhan.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
