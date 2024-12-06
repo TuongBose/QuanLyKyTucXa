@@ -63,7 +63,7 @@ namespace DoAnDBMS.Controllers
             }
 
             if (hasError)
-                return View();
+                return RedirectToAction("CanBo", "CanBo");
             else
             {
                 NewCanBo.MACB = macb;
@@ -84,7 +84,7 @@ namespace DoAnDBMS.Controllers
                 else
                 {
                     TempData["Message"] = "Mã cán bộ đã tồn tại";
-                    return View();
+                    return RedirectToAction("CanBo", "CanBo");
                 }
             }
         }
