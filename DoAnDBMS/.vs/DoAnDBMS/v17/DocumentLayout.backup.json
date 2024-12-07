@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\trangchu\\trangchunhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|d:\\hoctap\\dbms\\doan\\quanlykytucxa_web\\doandbms\\views\\trangchu\\trangchunhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\trangchu\\trangchunhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\trangchu\\trangchucanbo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\trangchu\\trangchucanbo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\sinhvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\sinhvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\dayphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\dayphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\phong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\phong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\hoadondiennuoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\hoadondiennuoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\controllers\\canbocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\controllers\\trangchucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:controllers\\trangchucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|d:\\hoctap\\dbms\\doan\\quanlykytucxa_web\\doandbms\\views\\canbo\\sinhvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\sinhvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\thannhan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -75,32 +107,12 @@
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\hoadondiennuoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\dayphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\dayphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\chitietnhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\chitietnhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\nhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\hoadonphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\hotro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -119,16 +131,8 @@
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\share\\layoutpagenhanvien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\dongia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\dayphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\dayphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\hoadondiennuoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\nhanvien\\hoadondiennuoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -137,10 +141,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\thongtinphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\thongtinphong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\canbo\\phong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|solutionrelative:views\\canbo\\phong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41AA809B-6B32-4729-AA12-E82E52B6BE6C}|DoAnDBMS.csproj|D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\views\\nhanvien\\themchisodiennuoccongto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -175,53 +175,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "TrangChuController.cs",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\TrangChuController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TrangChuController.cs",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\TrangChuController.cs",
-              "RelativeToolTip": "Controllers\\TrangChuController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T18:17:23.534Z",
+              "Title": "DonGia.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DonGia.cshtml",
+              "RelativeDocumentMoniker": "Views\\CanBo\\DonGia.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DonGia.cshtml",
+              "RelativeToolTip": "Views\\CanBo\\DonGia.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAADAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T19:11:54.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CanBo.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\CanBo.cshtml",
-              "RelativeDocumentMoniker": "Views\\CanBo\\CanBo.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\CanBo.cshtml",
-              "RelativeToolTip": "Views\\CanBo\\CanBo.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEcAAAAiAAAAAAAAAA==",
+              "Title": "DonGia.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\DonGia.cshtml",
+              "RelativeDocumentMoniker": "Views\\NhanVien\\DonGia.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\DonGia.cshtml",
+              "RelativeToolTip": "Views\\NhanVien\\DonGia.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T19:05:21.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChinhSuaCanBo.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ChinhSuaCanBo.cshtml",
-              "RelativeDocumentMoniker": "Views\\CanBo\\ChinhSuaCanBo.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ChinhSuaCanBo.cshtml",
-              "RelativeToolTip": "Views\\CanBo\\ChinhSuaCanBo.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-29T01:29:44.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TrangChuNhanVien.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\TrangChu\\TrangChuNhanVien.cshtml",
-              "RelativeDocumentMoniker": "Views\\TrangChu\\TrangChuNhanVien.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\TrangChu\\TrangChuNhanVien.cshtml",
-              "RelativeToolTip": "Views\\TrangChu\\TrangChuNhanVien.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T17:37:05.561Z",
+              "WhenOpened": "2024-11-28T05:18:58.585Z",
               "EditorCaption": ""
             },
             {
@@ -239,69 +213,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CanBoController.cs",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\CanBoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CanBoController.cs",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\CanBoController.cs",
-              "RelativeToolTip": "Controllers\\CanBoController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAwFQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T19:06:35.775Z",
+              "DocumentIndex": 0,
+              "Title": "TrangChuNhanVien.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\TrangChu\\TrangChuNhanVien.cshtml",
+              "RelativeDocumentMoniker": "Views\\TrangChu\\TrangChuNhanVien.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\TrangChu\\TrangChuNhanVien.cshtml",
+              "RelativeToolTip": "Views\\TrangChu\\TrangChuNhanVien.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-18T17:37:05.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "NhanVienController.cs",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\NhanVienController.cs",
-              "RelativeDocumentMoniker": "Controllers\\NhanVienController.cs",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\NhanVienController.cs",
-              "RelativeToolTip": "Controllers\\NhanVienController.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAewHEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T20:06:58.333Z",
+              "Title": "DayPhong.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DayPhong.cshtml",
+              "RelativeDocumentMoniker": "Views\\CanBo\\DayPhong.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DayPhong.cshtml",
+              "RelativeToolTip": "Views\\CanBo\\DayPhong.cshtml",
+              "ViewState": "AgIAABAAAAAAAAAAAAAqwCQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T19:11:14.476Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HoTro.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoTro.cshtml",
-              "RelativeDocumentMoniker": "Views\\NhanVien\\HoTro.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoTro.cshtml",
-              "RelativeToolTip": "Views\\NhanVien\\HoTro.cshtml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAG4AAAAaAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Phong.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\Phong.cshtml",
+              "RelativeDocumentMoniker": "Views\\CanBo\\Phong.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\Phong.cshtml",
+              "RelativeToolTip": "Views\\CanBo\\Phong.cshtml",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-28T05:19:15.523Z"
+              "WhenOpened": "2024-11-22T19:14:30.18Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ThanNhan.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\ThanNhan.cshtml",
-              "RelativeDocumentMoniker": "Views\\NhanVien\\ThanNhan.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\ThanNhan.cshtml",
-              "RelativeToolTip": "Views\\NhanVien\\ThanNhan.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-05T21:12:15.656Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SinhVien.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\SinhVien.cshtml",
-              "RelativeDocumentMoniker": "Views\\NhanVien\\SinhVien.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\SinhVien.cshtml",
-              "RelativeToolTip": "Views\\NhanVien\\SinhVien.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-05T18:47:15.903Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "SinhVien.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\SinhVien.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\SinhVien.cshtml",
@@ -314,7 +265,155 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NhanVien.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\NhanVien.cshtml",
+              "RelativeDocumentMoniker": "Views\\CanBo\\NhanVien.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\NhanVien.cshtml",
+              "RelativeToolTip": "Views\\CanBo\\NhanVien.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T19:05:30.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "HoaDonDienNuoc.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonDienNuoc.cshtml",
+              "RelativeDocumentMoniker": "Views\\NhanVien\\HoaDonDienNuoc.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonDienNuoc.cshtml",
+              "RelativeToolTip": "Views\\NhanVien\\HoaDonDienNuoc.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAEUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T18:52:24.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HoaDonPhong.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonPhong.cshtml",
+              "RelativeDocumentMoniker": "Views\\NhanVien\\HoaDonPhong.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonPhong.cshtml",
+              "RelativeToolTip": "Views\\NhanVien\\HoaDonPhong.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-28T05:19:12.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HoaDonPhong.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\HoaDonPhong.cshtml",
+              "RelativeDocumentMoniker": "Views\\CanBo\\HoaDonPhong.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\HoaDonPhong.cshtml",
+              "RelativeToolTip": "Views\\CanBo\\HoaDonPhong.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T19:13:19.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CanBoController.cs",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\CanBoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CanBoController.cs",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\CanBoController.cs",
+              "RelativeToolTip": "Controllers\\CanBoController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAwFQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T19:06:35.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ChinhSuaCanBo.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ChinhSuaCanBo.cshtml",
+              "RelativeDocumentMoniker": "Views\\CanBo\\ChinhSuaCanBo.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ChinhSuaCanBo.cshtml",
+              "RelativeToolTip": "Views\\CanBo\\ChinhSuaCanBo.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-29T01:29:44.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CanBo.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\CanBo.cshtml",
+              "RelativeDocumentMoniker": "Views\\CanBo\\CanBo.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\CanBo.cshtml",
+              "RelativeToolTip": "Views\\CanBo\\CanBo.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T19:05:21.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TrangChuController.cs",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\TrangChuController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TrangChuController.cs",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\TrangChuController.cs",
+              "RelativeToolTip": "Controllers\\TrangChuController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T18:17:23.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NhanVienController.cs",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\NhanVienController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NhanVienController.cs",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Controllers\\NhanVienController.cs",
+              "RelativeToolTip": "Controllers\\NhanVienController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAewHEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:06:58.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HoTro.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoTro.cshtml",
+              "RelativeDocumentMoniker": "Views\\NhanVien\\HoTro.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoTro.cshtml",
+              "RelativeToolTip": "Views\\NhanVien\\HoTro.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAG4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-28T05:19:15.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ThanNhan.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\ThanNhan.cshtml",
+              "RelativeDocumentMoniker": "Views\\NhanVien\\ThanNhan.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\ThanNhan.cshtml",
+              "RelativeToolTip": "Views\\NhanVien\\ThanNhan.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T21:12:15.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SinhVien.cshtml",
+              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\SinhVien.cshtml",
+              "RelativeDocumentMoniker": "Views\\NhanVien\\SinhVien.cshtml",
+              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\SinhVien.cshtml",
+              "RelativeToolTip": "Views\\NhanVien\\SinhVien.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T18:47:15.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ThanNhan.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ThanNhan.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\ThanNhan.cshtml",
@@ -326,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "QLKTX.designer.cs",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Models\\QLKTX.designer.cs",
               "RelativeDocumentMoniker": "Models\\QLKTX.designer.cs",
@@ -338,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "SuaSinhVien.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\SuaSinhVien.cshtml",
               "RelativeDocumentMoniker": "Views\\NhanVien\\SuaSinhVien.cshtml",
@@ -350,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "Phong.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\Phong.cshtml",
               "RelativeDocumentMoniker": "Views\\NhanVien\\Phong.cshtml",
@@ -362,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "QLKTX.dbml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Models\\QLKTX.dbml",
               "RelativeDocumentMoniker": "Models\\QLKTX.dbml",
@@ -373,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 24,
               "Title": "ChinhSuaDonGia.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ChinhSuaDonGia.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\ChinhSuaDonGia.cshtml",
@@ -385,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "HoaDonDienNuoc.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\HoaDonDienNuoc.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\HoaDonDienNuoc.cshtml",
@@ -397,31 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DonGia.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DonGia.cshtml",
-              "RelativeDocumentMoniker": "Views\\CanBo\\DonGia.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DonGia.cshtml",
-              "RelativeToolTip": "Views\\CanBo\\DonGia.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHUAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T19:11:54.294Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DayPhong.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DayPhong.cshtml",
-              "RelativeDocumentMoniker": "Views\\CanBo\\DayPhong.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DayPhong.cshtml",
-              "RelativeToolTip": "Views\\CanBo\\DayPhong.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T19:11:14.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "ChiTietNhanVien.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ChiTietNhanVien.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\ChiTietNhanVien.cshtml",
@@ -433,19 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "NhanVien.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\NhanVien.cshtml",
-              "RelativeDocumentMoniker": "Views\\CanBo\\NhanVien.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\NhanVien.cshtml",
-              "RelativeToolTip": "Views\\CanBo\\NhanVien.cshtml",
-              "ViewState": "AgIAADIAAAAAAAAAAAAgwGgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T19:05:30.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "NhanVien.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\NhanVien.cshtml",
               "RelativeDocumentMoniker": "Views\\NhanVien\\NhanVien.cshtml",
@@ -457,31 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "HoaDonPhong.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonPhong.cshtml",
-              "RelativeDocumentMoniker": "Views\\NhanVien\\HoaDonPhong.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonPhong.cshtml",
-              "RelativeToolTip": "Views\\NhanVien\\HoaDonPhong.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAE4AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-28T05:19:12.949Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "HoaDonPhong.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\HoaDonPhong.cshtml",
-              "RelativeDocumentMoniker": "Views\\CanBo\\HoaDonPhong.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\HoaDonPhong.cshtml",
-              "RelativeToolTip": "Views\\CanBo\\HoaDonPhong.cshtml",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAmwF4AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T19:13:19.099Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "HoTro.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\HoTro.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\HoTro.cshtml",
@@ -493,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "DangNhap.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\DangNhap.cshtml",
               "RelativeDocumentMoniker": "Views\\NhanVien\\DangNhap.cshtml",
@@ -505,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "LayoutPageCanBo.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\Share\\LayoutPageCanBo.cshtml",
               "RelativeDocumentMoniker": "Views\\Share\\LayoutPageCanBo.cshtml",
@@ -517,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "LayoutPageNhanVien.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\Share\\LayoutPageNhanVien.cshtml",
               "RelativeDocumentMoniker": "Views\\Share\\LayoutPageNhanVien.cshtml",
@@ -529,19 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "DonGia.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\DonGia.cshtml",
-              "RelativeDocumentMoniker": "Views\\NhanVien\\DonGia.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\DonGia.cshtml",
-              "RelativeToolTip": "Views\\NhanVien\\DonGia.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADsAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-28T05:18:58.585Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "DayPhong.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\DayPhong.cshtml",
               "RelativeDocumentMoniker": "Views\\NhanVien\\DayPhong.cshtml",
@@ -553,19 +580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "HoaDonDienNuoc.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonDienNuoc.cshtml",
-              "RelativeDocumentMoniker": "Views\\NhanVien\\HoaDonDienNuoc.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\NhanVien\\HoaDonDienNuoc.cshtml",
-              "RelativeToolTip": "Views\\NhanVien\\HoaDonDienNuoc.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEUAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T18:52:24.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "DangNhap.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\DangNhap.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\DangNhap.cshtml",
@@ -577,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "ThongTinPhong.cshtml",
               "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\ThongTinPhong.cshtml",
               "RelativeDocumentMoniker": "Views\\CanBo\\ThongTinPhong.cshtml",
@@ -586,18 +601,6 @@
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAEwAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-05T04:57:28.009Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Phong.cshtml",
-              "DocumentMoniker": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\Phong.cshtml",
-              "RelativeDocumentMoniker": "Views\\CanBo\\Phong.cshtml",
-              "ToolTip": "D:\\HocTap\\DBMS\\DoAn\\QuanLyKyTucXa_Web\\DoAnDBMS\\Views\\CanBo\\Phong.cshtml",
-              "RelativeToolTip": "Views\\CanBo\\Phong.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAFcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T19:14:30.18Z"
             },
             {
               "$type": "Document",

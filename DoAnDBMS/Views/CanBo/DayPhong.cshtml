@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "DayPhong";
     Layout = "~/Views/Share/LayoutPageCanBo.cshtml";
+    DoAnDBMS.Models.CANBO TaiKhoan = Session["Account"] as DoAnDBMS.Models.CANBO;
 }
 
 <style>
@@ -21,11 +22,14 @@
                 @TempData["Message"]
             </div>
         }
-        <p class="text-right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Thêm mới dãy phòng
-            </button>
-        </p>
+        @if (TaiKhoan.QUANTRI == true)
+        {
+            <p class="text-right">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                    Thêm mới dãy phòng
+                </button>
+            </p>
+        }
         <hr />
         <table class="table table-bordered table-striped table-hover">
             <tr class="table table-dark">

@@ -32,28 +32,56 @@
             </tr>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @item.MADONGIA
-                    </td>
-                    <td>
-                        @item.DONGIADIEN
-                    </td>
-                    <td>
-                        @item.DONGIANUOC
-                    </td>
-                    @if (item.TRANGTHAI == true)
-                    {
-                        <td>Đang áp dụng</td>
-                    }
-                    else
-                    {
-                        <td>Chưa áp dụng</td>
-                    }
-                    <td>
-                        @DateTime.Parse(item.NGAYAPDUNG.ToString()).ToShortDateString()
-                    </td>
-                </tr>
+                if (item.TRANGTHAI == true)
+                {
+                    <tr class="table table-success">
+                        <td>
+                            @item.MADONGIA
+                        </td>
+                        <td>
+                            @item.DONGIADIEN
+                        </td>
+                        <td>
+                            @item.DONGIANUOC
+                        </td>
+                        @if (item.TRANGTHAI == true)
+                        {
+                            <td>Đang áp dụng</td>
+                        }
+                        else
+                        {
+                            <td>Chưa áp dụng</td>
+                        }
+                        <td>
+                            @DateTime.Parse(item.NGAYAPDUNG.ToString()).ToShortDateString()
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            @item.MADONGIA
+                        </td>
+                        <td>
+                            @item.DONGIADIEN
+                        </td>
+                        <td>
+                            @item.DONGIANUOC
+                        </td>
+                        @if (item.TRANGTHAI == true)
+                        {
+                            <td>Đang áp dụng</td>
+                        }
+                        else
+                        {
+                            <td>Chưa áp dụng</td>
+                        }
+                        <td>
+                            @DateTime.Parse(item.NGAYAPDUNG.ToString()).ToShortDateString()
+                        </td>
+                    </tr>
+                }
             }
         </table>
     </div>
